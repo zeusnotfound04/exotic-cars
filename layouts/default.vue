@@ -1,9 +1,10 @@
 <template>
-    <div>
-      <Menu></Menu>
-      <div class="mainContainer">
-        <slot />
-      </div>
-      <Footer> </Footer>
+  <div>
+    <Menu></Menu>
+    <div class="mainContainer">
+      <slot />
     </div>
-  </template>
+    <Footer> </Footer>
+    <!-- loader -->
+  </div>
+</template>
