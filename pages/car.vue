@@ -237,3 +237,13 @@
     </div>
   </section>
 </template>
+<script>
+export default {
+  created: function () {
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "js/main.js";
+    document.body.appendChild(script);
+  },
+};
+</script>

@@ -12,7 +12,7 @@ import "../assets/css/aos.css";
 
 import "../assets/css/ionicons.min.css";
 
-import "../assets/css/bootstrap-datepicker.css";
+import "../assets/css/bootstrap-datepicker3.min.css";
 import "../assets/css/jquery.timepicker.css";
 
 import "../assets/css/flaticon.css";
@@ -103,9 +103,16 @@ export default {
 
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="/img/logo.png" alt="" height="70px" />
-      </a>
+      <a class="navbar-brand" href="#"> </a>
+      <div class="navbar-brand">
+        <nuxt-link to="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <div style="width: 150px; height: 68px; position: relative; left: 34px; top: 0px">
+            <div style="left: -7px; top: 0px; position: absolute; text-align: center">
+              <img src="/img/logo.png" alt="" height="70px" />
+            </div>
+          </div>
+        </nuxt-link>
+      </div>
       <button
         class="navbar-toggler"
         type="button"
@@ -121,13 +128,15 @@ export default {
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a href="index.html" class="nav-link">Home</a>
+            <nuxt-link class="nav-link menu-link" to="/" @click="visible = !visible">Home</nuxt-link>
           </li>
           <li class="nav-item">
             <a href="about.html" class="nav-link">Reservation</a>
           </li>
           <li class="nav-item">
-            <a href="services.html" class="nav-link">Instant Booking</a>
+            <nuxt-link class="nav-link menu-link" to="/instant_booking" @click="visible = !visible"
+              >Instant Booking</nuxt-link
+            >
           </li>
           <li class="nav-item dropdown">
             <a

@@ -1,12 +1,9 @@
+AOS.init({
+	duration: 800,
+	easing: 'slide'
+});
 
-
-(function($) {
-
-	// AOS.init({
-	// 	duration: 800,
-	// 	easing: 'slide'
-	// });
-
+$(function() {
 	"use strict";
 
 	var isMobile = {
@@ -49,7 +46,7 @@
 		});
 
 	};
-	fullHeight();
+	
 
 	// loader
 	var loader = function() {
@@ -59,10 +56,7 @@
 			}
 		}, 2000);
 	};
-	loader();
 
-	// Scrollax
-   $.Scrollax();
 
 	var carousel = function() {
 		$('.carousel-car').owlCarousel({
@@ -108,7 +102,8 @@
 		});
 
 	};
-	carousel();
+
+
 
 	$('nav .dropdown').hover(function(){
 		var $this = $(this);
@@ -172,7 +167,7 @@
 			}
 		});
 	};
-	scrollWindow();
+
 
 	var isMobile = {
 		Android: function() {
@@ -219,13 +214,14 @@
 		} , { offset: '95%' } );
 
 	}
-	counter();
+
 
 
 	var contentWayPoint = function() {
+		console.log('content way animated');
 		var i = 0;
 		$('.ftco-animate').waypoint( function( direction ) {
-
+			console.log('content way animated');
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
 				
 				i++;
@@ -256,7 +252,7 @@
 
 		} , { offset: '95%' } );
 	};
-	contentWayPoint();
+	
 
 
 	// navigation
@@ -281,7 +277,7 @@
 		  console.log('nice');
 		})
 	};
-	OnePageNav();
+	
 
 
 	// magnific popup
@@ -322,7 +318,16 @@
 	});
 	$('#time_pick').timepicker();
 
+   setTimeout(() => {
+	carousel();
+	scrollWindow();
+	counter();
+	contentWayPoint();
+	OnePageNav();
+	fullHeight();
+	loader();
+		// Scrollax
+		$.Scrollax();
+}, 800);
 
-
-})(jQuery);
-
+});

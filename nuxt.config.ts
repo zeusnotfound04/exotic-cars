@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
+    // pageTransition: { name: 'page', mode: 'out-in' },
     baseURL: '/',
     head: {
       title: "Miami Exotic Cars" || '',
@@ -12,19 +12,9 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'stylesheet', type: "text/css", href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' },
         { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap' },
-
-        // <link href="" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        // { rel: "stylesheet", type: "text/css", href: "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" }
-         { rel: "stylesheet", type: "text/css", href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" }
-      ],  script: [
-        // { src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js' },
-        // { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' },
-        // { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' }
-        {src : 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'},
-        // {src:"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"},
-
+      ],  
+      script: [
         {src:"js/jquery.min.js"},
         {src:"js/jquery-migrate-3.0.1.min.js"},
         {src:"js/popper.min.js"},
@@ -39,13 +29,9 @@ export default defineNuxtConfig({
         {src:"js/bootstrap-datepicker.js"},
         {src:"js/jquery.timepicker.min.js"},
         {src:"js/scrollax.min.js"},
-        // {src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"},
-        // {src:"js/google-map.js"},
-        {src:"js/main.js"},
       ],
     },
   },
-  // css: ["bootstrap/dist/css/bootstrap.min.css"],
   ssr: false,
 
   modules: [
@@ -60,9 +46,12 @@ export default defineNuxtConfig({
         ],
       },
     ],
+    '@nuxt/ui',
+    // '@nuxtjs/date-fns',
     // '@nuxtjs/pwa',
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt',
     // '@nuxtjs/axios'
+    
   ],
   pwa: {
     /* your pwa options */

@@ -85,3 +85,28 @@
     </div>
   </section>
 </template>
+<script>
+export default {
+  created: function () {
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "js/main.js";
+    document.body.appendChild(script);
+
+    const script1 = document.createElement("script");
+    script1.type = "text/javascript";
+    script1.src =
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false&libraries=geometry";
+    script1.defer = true;
+    script1.async = true;
+    document.body.appendChild(script1);
+
+    const script2 = document.createElement("script");
+    script2.type = "text/javascript";
+    script2.src = "js/google-map.js";
+    script2.defer = true;
+    script2.async = true;
+    document.body.appendChild(script2);
+  },
+};
+</script>
