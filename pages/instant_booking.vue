@@ -1,4 +1,3 @@
-<script setup></script>
 <template>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"

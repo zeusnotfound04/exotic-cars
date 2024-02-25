@@ -60,26 +60,33 @@
         <div class="col-md-8 block-9 mb-md-5">
           <form action="#" class="bg-light p-5 contact-form">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name" />
+              <input type="text" class="form-control" placeholder="Your Name" v-model="name" autocomplete="name" />
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Email" />
+              <input type="text" class="form-control" placeholder="Your Email" v-model="email" autocomplete="email" />
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject" />
+              <input type="text" class="form-control" placeholder="Subject" v-model="subject" />
             </div>
             <div class="form-group">
-              <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="7"
+                class="form-control"
+                placeholder="Message"
+                v-model="message"
+              ></textarea>
             </div>
             <div class="form-group">
-              <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" />
+              <input type="type" value="Send Message" class="btn btn-primary py-3 px-5" @click="formSubmit" />
             </div>
           </form>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-md-12">
-          <!-- <div id="map" class="bg-white"></div> -->
           <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 90vw; height: 300px" />
         </div>
       </div>
@@ -87,32 +94,60 @@
   </section>
 </template>
 <script>
+const {$toast} = useNuxtApp();
 export default {
-  data() {
+  data: () => {
     return {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
       center: {lat: 40.69847032728747, lng: -73.9514422416687},
     };
   },
+
+  methods: {
+    formSubmit() {
+      let post_data = {
+        name: this.name,
+        email: this.email,
+        subject: this.subject,
+        message: this.message,
+      };
+
+      if (post_data.name === "" || post_data.email === "" || post_data.subject === "" || post_data.message === "") {
+        $toast.error("Oh no, please fill all the inputs to continue!");
+        return false;
+      }
+      console.log(post_data);
+      $fetch("http://localhost:3000/api/contact_message/", {
+        method: "POST",
+        body: post_data,
+      }).then(
+        (res) => {
+          $toast.success("Thank you for contacting us, we will contact you shortly!");
+          if (error) {
+            // dealing error
+            $toast.error("Oh no, there was an error, please try again later or contact us via emai!");
+            console.log(error);
+          } else {
+            console.log(data);
+          }
+        },
+        (error) => {
+          console.log("exception...");
+          console.log(error);
+          $toast.error("Oh no, there was an error, please try again later or contact us via emai!");
+        }
+      );
+    },
+  },
+
   created: function () {
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.src = "js/main.js";
     document.body.appendChild(script);
-
-    // const script1 = document.createElement("script");
-    // script1.type = "text/javascript";
-    // script1.src =
-    //   "https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false&libraries=geometry";
-    // script1.defer = true;
-    // script1.async = true;
-    // document.body.appendChild(script1);
-
-    // const script2 = document.createElement("script");
-    // script2.type = "text/javascript";
-    // script2.src = "js/google-map.js";
-    // script2.defer = true;
-    // script2.async = true;
-    // document.body.appendChild(script2);
   },
 };
 </script>
