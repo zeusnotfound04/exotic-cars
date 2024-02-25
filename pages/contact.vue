@@ -26,7 +26,7 @@
         <div class="col-md-4">
           <div class="row mb-5">
             <div class="col-md-12">
-              <div class="border w-100 p-4 rounded mb-2 d-flex">
+              <div class="w-100 p-4 rounded mb-2 d-flex">
                 <div class="icon mr-3">
                   <span class="icon-map-o"></span>
                 </div>
@@ -34,7 +34,7 @@
               </div>
             </div>
             <div class="col-md-12">
-              <div class="border w-100 p-4 rounded mb-2 d-flex">
+              <div class="w-100 p-4 rounded mb-2 d-flex">
                 <div class="icon mr-3">
                   <span class="icon-mobile-phone"></span>
                 </div>
@@ -45,7 +45,7 @@
               </div>
             </div>
             <div class="col-md-12">
-              <div class="border w-100 p-4 rounded mb-2 d-flex">
+              <div class="w-100 p-4 rounded mb-2 d-flex">
                 <div class="icon mr-3">
                   <span class="icon-envelope-o"></span>
                 </div>
@@ -79,7 +79,8 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-md-12">
-          <div id="map" class="bg-white"></div>
+          <!-- <div id="map" class="bg-white"></div> -->
+          <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 90vw; height: 300px" />
         </div>
       </div>
     </div>
@@ -87,26 +88,31 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      center: {lat: 40.69847032728747, lng: -73.9514422416687},
+    };
+  },
   created: function () {
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.src = "js/main.js";
     document.body.appendChild(script);
 
-    const script1 = document.createElement("script");
-    script1.type = "text/javascript";
-    script1.src =
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false&libraries=geometry";
-    script1.defer = true;
-    script1.async = true;
-    document.body.appendChild(script1);
+    // const script1 = document.createElement("script");
+    // script1.type = "text/javascript";
+    // script1.src =
+    //   "https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false&libraries=geometry";
+    // script1.defer = true;
+    // script1.async = true;
+    // document.body.appendChild(script1);
 
-    const script2 = document.createElement("script");
-    script2.type = "text/javascript";
-    script2.src = "js/google-map.js";
-    script2.defer = true;
-    script2.async = true;
-    document.body.appendChild(script2);
+    // const script2 = document.createElement("script");
+    // script2.type = "text/javascript";
+    // script2.src = "js/google-map.js";
+    // script2.defer = true;
+    // script2.async = true;
+    // document.body.appendChild(script2);
   },
 };
 </script>

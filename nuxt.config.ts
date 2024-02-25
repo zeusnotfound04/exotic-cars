@@ -97,13 +97,16 @@ export default defineNuxtConfig({
     // Keys within public are also exposed client-side
     public: {
       apiDomain: 'http://192.168.10.12/',
-      apiBase: 'api'
-    }
+      apiBase: 'api',
+      GOOGLE_MAPS_API_KEY: 'AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s'
+    },
   },
   routeRules: {
     '/api/**': {
         proxy: { to: "http://localhost:3002/api/**", },
     }
   },
+
+  build: { transpile: ["@fawmi/vue-google-maps"] },
 
 });
