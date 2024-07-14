@@ -6,13 +6,10 @@
           <div class="ftco-footer-widget mb-4">
             <h2 class="ftco-heading-2">
               <a class="navbar-brand" href="#">
-                <img src="/img/logo.png" width="150" height="68" />
+                <img src="/img/logo.png" height="68" />
               </a>
             </h2>
-            <p>
-              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts.
-            </p>
+            <p></p>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
               <li class="ftco-animate">
                 <a href="#"><span class="icon-twitter"></span></a>
@@ -30,13 +27,13 @@
           <div class="ftco-footer-widget mb-4 ml-md-5">
             <h2 class="ftco-heading-2">Information</h2>
             <ul class="list-unstyled">
-              <li><a href="#" class="py-2 d-block">About</a></li>
-              <li><a href="#" class="py-2 d-block">Services</a></li>
+              <li><nuxt-link class="py-2 d-block" to="/about">About</nuxt-link></li>
+              <li><nuxt-link class="py-2 d-block" to="/services">Services</nuxt-link></li>
               <li>
-                <a href="#" class="py-2 d-block">Term and Conditions</a>
+                <nuxt-link class="py-2 d-block" to="/terms-conditions">Term and Conditions</nuxt-link>
               </li>
               <li>
-                <a href="#" class="py-2 d-block">Best Price Guarantee</a>
+                <nuxt-link class="py-2 d-block" to="/best_price_guarantee">Best Price Guarantee</nuxt-link>
               </li>
               <li>
                 <a href="#" class="py-2 d-block">Privacy &amp; Cookies Policy</a>

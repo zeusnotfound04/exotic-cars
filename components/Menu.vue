@@ -15,7 +15,7 @@ import "../assets/css/ionicons.min.css";
 import "../assets/css/bootstrap-datepicker3.min.css";
 import "../assets/css/jquery.timepicker.css";
 
-import "../assets/css/flaticon.css";
+// import "../assets/css/flaticon.css";
 import "../assets/css/icomoon.css";
 
 // import "../assets/css/theme.css";
@@ -51,52 +51,52 @@ export default {
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
   <link
-    href="images/splashscreens/iphone5_splash.png"
+    href="/img/splashscreens/iphone5_splash.png"
     media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
     rel="apple-touch-startup-image"
   />
   <link
-    href="images/splashscreens/iphone6_splash.png"
+    href="/img/splashscreens/iphone6_splash.png"
     media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
     rel="apple-touch-startup-image"
   />
   <link
-    href="images/splashscreens/iphoneplus_splash.png"
+    href="/img/splashscreens/iphoneplus_splash.png"
     media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
     rel="apple-touch-startup-image"
   />
   <link
-    href="images/splashscreens/iphonex_splash.png"
+    href="/img/splashscreens/iphonex_splash.png"
     media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
     rel="apple-touch-startup-image"
   />
   <link
-    href="images/splashscreens/iphonexr_splash.png"
+    href="/img/splashscreens/iphonexr_splash.png"
     media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
     rel="apple-touch-startup-image"
   />
   <link
-    href="images/splashscreens/iphonexsmax_splash.png"
+    href="/img/splashscreens/iphonexsmax_splash.png"
     media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
     rel="apple-touch-startup-image"
   />
   <link
-    href="images/splashscreens/ipad_splash.png"
+    href="/img/splashscreens/ipad_splash.png"
     media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
     rel="apple-touch-startup-image"
   />
   <link
-    href="images/splashscreens/ipadpro1_splash.png"
+    href="/img/splashscreens/ipadpro1_splash.png"
     media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
     rel="apple-touch-startup-image"
   />
   <link
-    href="images/splashscreens/ipadpro3_splash.png"
+    href="/img/splashscreens/ipadpro3_splash.png"
     media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)"
     rel="apple-touch-startup-image"
   />
   <link
-    href="images/splashscreens/ipadpro2_splash.png"
+    href="/img/splashscreens/ipadpro2_splash.png"
     media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
     rel="apple-touch-startup-image"
   />
@@ -130,14 +130,11 @@ export default {
           <li class="nav-item active">
             <nuxt-link class="nav-link menu-link" to="/" @click="visible = !visible">Home</nuxt-link>
           </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">Reservation</a>
-          </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/instant_booking" @click="visible = !visible"
               >Instant Booking</nuxt-link
             >
-          </li>
+          </li> -->
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -153,13 +150,13 @@ export default {
             <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Yatchs</a>
               <a class="dropdown-item" href="#">Airbnbs</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Events</a>
+              <!-- <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Events</a> -->
             </div>
           </li>
 
           <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/car" @click="visible = !visible">Car</nuxt-link>
+            <nuxt-link class="nav-link menu-link" to="/exotic_cars" @click="visible = !visible">Exotic Cars</nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/services" @click="visible = !visible">Services</nuxt-link>
@@ -169,6 +166,11 @@ export default {
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/contact" @click="visible = !visible">Contact</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link menu-link" to="/custom_request" @click="visible = !visible"
+              >Custom Request</nuxt-link
+            >
           </li>
         </ul>
       </div>

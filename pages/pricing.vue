@@ -1,7 +1,7 @@
 <template>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
-    style="background-image: url('images/bg_3.jpg')"
+    style="background-image: url('img/bg_3.jpg')"
     data-stellar-background-ratio="0.5"
   >
     <div class="overlay"></div>
@@ -37,7 +37,7 @@
               </thead>
               <tbody>
                 <tr class="">
-                  <td class="car-image"><div class="img" style="background-image: url(images/car-1.jpg)"></div></td>
+                  <td class="car-image"><div class="img" style="background-image: url(img/car-1.jpg)"></div></td>
                   <td class="product-name">
                     <h3>Cheverolet SUV Car</h3>
                     <p class="mb-0 rated">
@@ -86,7 +86,7 @@
                 <!-- END TR-->
 
                 <tr class="">
-                  <td class="car-image"><div class="img" style="background-image: url(images/car-2.jpg)"></div></td>
+                  <td class="car-image"><div class="img" style="background-image: url(img/car-2.jpg)"></div></td>
                   <td class="product-name">
                     <h3>Cheverolet SUV Car</h3>
                     <p class="mb-0 rated">
@@ -135,7 +135,7 @@
                 <!-- END TR-->
 
                 <tr class="">
-                  <td class="car-image"><div class="img" style="background-image: url(images/car-3.jpg)"></div></td>
+                  <td class="car-image"><div class="img" style="background-image: url(img/car-3.jpg)"></div></td>
                   <td class="product-name">
                     <h3>Cheverolet SUV Car</h3>
                     <p class="mb-0 rated">
@@ -184,7 +184,7 @@
                 <!-- END TR-->
 
                 <tr class="">
-                  <td class="car-image"><div class="img" style="background-image: url(images/car-4.jpg)"></div></td>
+                  <td class="car-image"><div class="img" style="background-image: url(img/car-4.jpg)"></div></td>
                   <td class="product-name">
                     <h3>Cheverolet SUV Car</h3>
                     <p class="mb-0 rated">
@@ -233,7 +233,7 @@
                 <!-- END TR-->
 
                 <tr class="">
-                  <td class="car-image"><div class="img" style="background-image: url(images/car-5.jpg)"></div></td>
+                  <td class="car-image"><div class="img" style="background-image: url(img/car-5.jpg)"></div></td>
                   <td class="product-name">
                     <h3>Cheverolet SUV Car</h3>
                     <p class="mb-0 rated">
@@ -282,7 +282,7 @@
                 <!-- END TR-->
 
                 <tr class="">
-                  <td class="car-image"><div class="img" style="background-image: url(images/car-6.jpg)"></div></td>
+                  <td class="car-image"><div class="img" style="background-image: url(img/car-6.jpg)"></div></td>
                   <td class="product-name">
                     <h3>Cheverolet SUV Car</h3>
                     <p class="mb-0 rated">

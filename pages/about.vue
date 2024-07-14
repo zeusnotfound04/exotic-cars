@@ -1,7 +1,7 @@
 <template>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
-    style="background-image: url('images/bg_3.jpg')"
+    style="background-image: url('img/bg_3.jpg')"
     data-stellar-background-ratio="0.5"
   >
     <div class="overlay"></div>
@@ -25,7 +25,7 @@
       <div class="row no-gutters">
         <div
           class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
-          style="background-image: url(images/about.jpg)"
+          style="background-image: url(img/about.jpg)"
         ></div>
         <div class="col-md-6 wrap-about ftco-animate">
           <div class="heading-section heading-section-white pl-md-5">
@@ -50,13 +50,16 @@
     </div>
   </section>
 
-  <section class="ftco-section ftco-intro" style="background-image: url(images/bg_3.jpg)">
+  <section class="ftco-section ftco-intro" style="background-image: url(img/bg_3.jpg)">
     <div class="overlay"></div>
     <div class="container">
       <div class="row justify-content-end">
         <div class="col-md-6 heading-section heading-section-white ftco-animate">
           <h2 class="mb-3">Do You Want To Earn With Us? So Don't Be Late.</h2>
-          <a href="#" class="btn btn-primary btn-lg">Become A Driver</a>
+          <nuxt-link class="btn btn-primary btn-lg" to="/exotic_cars" @click="visible = !visible"
+            >Exotic Cars</nuxt-link
+          >
+          <!-- <a href="#" class="btn btn-primary btn-lg">Become A Driver</a> -->
         </div>
       </div>
     </div>
@@ -75,7 +78,7 @@
           <div class="carousel-testimony owl-carousel ftco-owl">
             <div class="item">
               <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)"></div>
+                <div class="user-img mb-2" style="background-image: url('/img/person_1.jpg')"></div>
                 <div class="text pt-4">
                   <p class="mb-4">
                     Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
@@ -88,7 +91,7 @@
             </div>
             <div class="item">
               <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(images/person_2.jpg)"></div>
+                <div class="user-img mb-2" style="background-image: url(img/person_2.jpg)"></div>
                 <div class="text pt-4">
                   <p class="mb-4">
                     Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
@@ -101,7 +104,7 @@
             </div>
             <div class="item">
               <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(images/person_3.jpg)"></div>
+                <div class="user-img mb-2" style="background-image: url(img/person_3.jpg)"></div>
                 <div class="text pt-4">
                   <p class="mb-4">
                     Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
@@ -114,7 +117,7 @@
             </div>
             <div class="item">
               <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)"></div>
+                <div class="user-img mb-2" style="background-image: url('/img/person_1.jpg')"></div>
                 <div class="text pt-4">
                   <p class="mb-4">
                     Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
@@ -127,7 +130,7 @@
             </div>
             <div class="item">
               <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)"></div>
+                <div class="user-img mb-2" style="background-image: url('/img/person_1.jpg')"></div>
                 <div class="text pt-4">
                   <p class="mb-4">
                     Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live

@@ -1,7 +1,7 @@
 <template>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
-    style="background-image: url('images/bg_3.jpg')"
+    style="background-image: url('img/bg_3.jpg')"
     data-stellar-background-ratio="0.5"
   >
     <div class="overlay"></div>
@@ -35,7 +35,7 @@
             iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora.
           </p>
           <p>
-            <img src="images/image_7.jpg" alt="" class="img-fluid" />
+            <img src="/img/image_5.jpg" alt="" class="img-fluid" />
           </p>
           <p>
             Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus
@@ -51,7 +51,7 @@
             officiis reiciendis incidunt hic non? Debitis commodi aut, adipisci.
           </p>
           <p>
-            <img src="images/image_8.jpg" alt="" class="img-fluid" />
+            <img src="/img/image_6.jpg" alt="" class="img-fluid" />
           </p>
           <p>
             Quisquam esse aliquam fuga distinctio, quidem delectus veritatis reiciendis. Nihil explicabo quod, est eos
@@ -88,7 +88,7 @@
 
           <div class="about-author d-flex p-4 bg-light">
             <div class="bio mr-5">
-              <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4" />
+              <img src="/img/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4" />
             </div>
             <div class="desc">
               <h3>George Washington</h3>
@@ -105,7 +105,7 @@
             <ul class="comment-list">
               <li class="comment">
                 <div class="vcard bio">
-                  <img src="images/person_1.jpg" alt="Image placeholder" />
+                  <img src="/img/person_1.jpg" alt="Image placeholder" />
                 </div>
                 <div class="comment-body">
                   <h3>John Doe</h3>
@@ -121,7 +121,7 @@
 
               <li class="comment">
                 <div class="vcard bio">
-                  <img src="images/person_1.jpg" alt="Image placeholder" />
+                  <img src="/img/person_1.jpg" alt="Image placeholder" />
                 </div>
                 <div class="comment-body">
                   <h3>John Doe</h3>
@@ -137,7 +137,7 @@
                 <ul class="children">
                   <li class="comment">
                     <div class="vcard bio">
-                      <img src="images/person_1.jpg" alt="Image placeholder" />
+                      <img src="/img/person_1.jpg" alt="Image placeholder" />
                     </div>
                     <div class="comment-body">
                       <h3>John Doe</h3>
@@ -153,7 +153,7 @@
                     <ul class="children">
                       <li class="comment">
                         <div class="vcard bio">
-                          <img src="images/person_1.jpg" alt="Image placeholder" />
+                          <img src="/img/person_1.jpg" alt="Image placeholder" />
                         </div>
                         <div class="comment-body">
                           <h3>John Doe</h3>
@@ -169,7 +169,7 @@
                         <ul class="children">
                           <li class="comment">
                             <div class="vcard bio">
-                              <img src="images/person_1.jpg" alt="Image placeholder" />
+                              <img src="/img/person_1.jpg" alt="Image placeholder" />
                             </div>
                             <div class="comment-body">
                               <h3>John Doe</h3>
@@ -191,7 +191,7 @@
 
               <li class="comment">
                 <div class="vcard bio">
-                  <img src="images/person_1.jpg" alt="Image placeholder" />
+                  <img src="/img/person_1.jpg" alt="Image placeholder" />
                 </div>
                 <div class="comment-body">
                   <h3>John Doe</h3>
@@ -271,7 +271,7 @@
           <div class="sidebar-box ftco-animate">
             <h3>Recent Blog</h3>
             <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg)"></a>
+              <a class="blog-img mr-4" style="background-image: url(img/image_1.jpg)"></a>
               <div class="text">
                 <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
                 <div class="meta">
@@ -288,7 +288,7 @@
               </div>
             </div>
             <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg)"></a>
+              <a class="blog-img mr-4" style="background-image: url(img/image_2.jpg)"></a>
               <div class="text">
                 <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
                 <div class="meta">
@@ -305,7 +305,7 @@
               </div>
             </div>
             <div class="block-21 mb-4 d-flex">
-              <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg)"></a>
+              <a class="blog-img mr-4" style="background-image: url(img/image_3.jpg)"></a>
               <div class="text">
                 <h3 class="heading"><a href="#">Why Lead Generation is Key for Business Growth</a></h3>
                 <div class="meta">

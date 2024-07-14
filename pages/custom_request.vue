@@ -12,9 +12,9 @@
             <span class="mr-2"
               ><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a
             ></span>
-            <span>Instant Booking <i class="ion-ios-arrow-forward"></i></span>
+            <span>Custom Request <i class="ion-ios-arrow-forward"></i></span>
           </p>
-          <h1 class="mb-3 bread">Instant Booking</h1>
+          <h1 class="mb-3 bread">Custom Request</h1>
         </div>
       </div>
     </div>
@@ -120,7 +120,7 @@ export default {
         return false;
       }
       console.log(post_data);
-      $fetch("http://localhost:3000/api/register_submission/", {
+      $fetch("/api/register_submission/", {
         method: "POST",
         body: post_data,
       }).then(
@@ -164,6 +164,12 @@ export default {
         $(this).datepicker();
       });
     });
+  },
+  mounted() {
+    // console.log(this.$route.query);
+    if (this.$route.query && this.$route.query.vehicle) {
+      this.vehicle = this.$route.query.vehicle;
+    }
   },
 };
 </script>

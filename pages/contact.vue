@@ -120,7 +120,7 @@ export default {
         return false;
       }
       console.log(post_data);
-      $fetch("http://localhost:3000/api/contact_message/", {
+      $fetch("/api/contact_message/", {
         method: "POST",
         body: post_data,
       }).then(
