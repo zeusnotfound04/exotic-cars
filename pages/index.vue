@@ -33,16 +33,16 @@
           <div class="carousel-car owl-carousel">
             <div class="item">
               <div class="car-wrap rounded ftco-animate">
-                <div class="img rounded d-flex align-items-end" style="background-image: url('/img/car-1.jpg')"></div>
+                <div class="img rounded d-flex align-items-end" style="background-image: url('/img/lu.jpg')"></div>
                 <div class="text">
-                  <h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
+                  <h2 class="mb-0"><a href="#">Lamborghini Urus</a></h2>
                   <div class="d-flex mb-3">
-                    <span class="cat">Cheverolet</span>
-                    <p class="price ml-auto">$500 <span>/day</span></p>
+                    <span class="cat">Lamborghini</span>
+                    <p class="price ml-auto">$1,250 <span>/day</span></p>
                   </div>
                   <p class="d-flex mb-0 d-block">
                     <nuxt-link
-                      :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
+                      :to="{path: 'custom_request', query: {vehicle: 'Lamborghini Urus'}}"
                       class="btn btn-primary py-2 mr-1"
                       >Book Now</nuxt-link
                     >
@@ -53,40 +53,43 @@
             </div>
             <div class="item">
               <div class="car-wrap rounded ftco-animate">
-                <div class="img rounded d-flex align-items-end" style="background-image: url('/img/car-2.jpg')"></div>
+                <div class="img rounded d-flex align-items-end" style="background-image: url('/img/mb63.jpg')"></div>
                 <div class="text">
-                  <h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
+                  <h2 class="mb-0"><a href="#">Benz g63</a></h2>
                   <div class="d-flex mb-3">
-                    <span class="cat">Cheverolet</span>
-                    <p class="price ml-auto">$500 <span>/day</span></p>
+                    <span class="cat">Mercedes Benz</span>
+                    <p class="price ml-auto">$1,000 <span>/day</span></p>
                   </div>
                   <p class="d-flex mb-0 d-block">
                     <nuxt-link
-                      :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
+                      :to="{path: 'custom_request', query: {vehicle: 'Benz g63'}}"
                       class="btn btn-primary py-2 mr-1"
                       >Book Now</nuxt-link
                     >
-                    <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
+                    <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
                   </p>
                 </div>
               </div>
             </div>
             <div class="item">
               <div class="car-wrap rounded ftco-animate">
-                <div class="img rounded d-flex align-items-end" style="background-image: url('img/car-3.jpg')"></div>
+                <div
+                  class="img rounded d-flex align-items-end"
+                  style="background-image: url('img/rr_cullinam.jpg')"
+                ></div>
                 <div class="text">
-                  <h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
+                  <h2 class="mb-0"><a href="#">Rolls Royce Cullinan</a></h2>
                   <div class="d-flex mb-3">
-                    <span class="cat">Cheverolet</span>
-                    <p class="price ml-auto">$500 <span>/day</span></p>
+                    <span class="cat">Rolls Royce</span>
+                    <p class="price ml-auto">$1,500 <span>/day</span></p>
                   </div>
                   <p class="d-flex mb-0 d-block">
                     <nuxt-link
-                      :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
+                      :to="{path: 'custom_request', query: {vehicle: 'Rolls Royce Cullinan'}}"
                       class="btn btn-primary py-2 mr-1"
                       >Book Now</nuxt-link
                     >
-                    <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
+                    <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
                   </p>
                 </div>
               </div>
@@ -95,18 +98,18 @@
               <div class="car-wrap rounded ftco-animate">
                 <div class="img rounded d-flex align-items-end" style="background-image: url('img/car-4.jpg')"></div>
                 <div class="text">
-                  <h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
+                  <h2 class="mb-0"><a href="#">Benz s580 Maybach</a></h2>
                   <div class="d-flex mb-3">
-                    <span class="cat">Cheverolet</span>
-                    <p class="price ml-auto">$500 <span>/day</span></p>
+                    <span class="cat">Mercedes Benz</span>
+                    <p class="price ml-auto">$900 <span>/day</span></p>
                   </div>
                   <p class="d-flex mb-0 d-block">
                     <nuxt-link
-                      :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
+                      :to="{path: 'custom_request', query: {vehicle: 'Benz s580 Maybach'}}"
                       class="btn btn-primary py-2 mr-1"
                       >Book Now</nuxt-link
                     >
-                    <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
+                    <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
                   </p>
                 </div>
               </div>
@@ -563,7 +566,7 @@
                   transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
                 >
                   <path
-                    d="M 75.841 66.698 c -4.459 0 -8.087 -3.628 -8.087 -8.088 c 0 -4.459 3.628 -8.087 8.087 -8.087 s 8.087 3.628 8.087 8.087 C 83.928 63.07 80.3 66.698 75.841 66.698 z M 75.841 53.523 c -2.805 0 -5.087 2.282 -5.087 5.087 c 0 2.806 2.282 5.088 5.087 5.088 s 5.087 -2.282 5.087 -5.088 C 80.928 55.806 78.646 53.523 75.841 53.523 z"
+                    d="M 89.846 70.695 c -0.363 -0.734 -1.254 -1.036 -1.988 -0.672 c -6.19 3.061 -12.901 4.57 -20.074 4.539 l 7.303 -24.954 c 0.221 -0.755 -0.186 -1.552 -0.929 -1.815 l -7.346 -2.599 V 23.937 c 0 -0.819 -0.664 -1.483 -1.483 -1.483 h -5.121 V 11.486 c 0 -0.819 -0.664 -1.484 -1.484 -1.484 H 46.484 V 4.056 c 0 -0.819 -0.664 -1.484 -1.484 -1.484 s -1.484 0.664 -1.484 1.484 v 5.946 H 31.276 c -0.819 0 -1.484 0.664 -1.484 1.484 v 10.968 h -5.121 c -0.819 0 -1.484 0.664 -1.484 1.483 v 21.257 l -7.346 2.599 c -0.742 0.263 -1.15 1.06 -0.929 1.815 l 4.671 15.962 C 13.5 66.017 7.307 67.473 0.942 69.972 c -0.763 0.299 -1.138 1.161 -0.839 1.923 c 0.299 0.763 1.158 1.136 1.923 0.839 c 14.762 -5.796 28.543 -5.803 42.182 0.005 c 8.367 3.199 16.321 4.798 23.815 4.798 c 7.535 0 14.604 -1.619 21.15 -4.854 C 89.908 72.32 90.209 71.43 89.846 70.695 z M 32.759 12.97 h 24.482 v 9.484 H 32.759 V 12.97 z M 26.155 25.421 h 37.691 v 18.723 l -18.35 -6.492 c -0.014 -0.005 -0.029 -0.003 -0.043 -0.007 c -0.143 -0.046 -0.293 -0.078 -0.452 -0.078 s -0.309 0.032 -0.452 0.078 c -0.014 0.004 -0.029 0.002 -0.043 0.007 l -18.351 6.492 V 25.421 z M 22.634 65.429 l -4.479 -15.308 l 25.361 -8.972 v 19.596 c 0 0.819 0.664 1.483 1.484 1.483 s 1.484 -0.664 1.484 -1.483 V 41.15 l 25.362 8.972 l -7.119 24.328 c -6.159 -0.393 -12.637 -1.873 -19.408 -4.461 C 37.845 66.806 30.321 65.297 22.634 65.429 z"
                     style="
                       stroke: none;
                       stroke-width: 1;
@@ -579,7 +582,7 @@
                     stroke-linecap="round"
                   />
                   <path
-                    d="M 19.947 66.698 c -4.459 0 -8.087 -3.628 -8.087 -8.088 c 0 -4.459 3.628 -8.087 8.087 -8.087 s 8.087 3.628 8.087 8.087 C 28.034 63.07 24.406 66.698 19.947 66.698 z M 19.947 53.523 c -2.805 0 -5.087 2.282 -5.087 5.087 c 0 2.806 2.282 5.088 5.087 5.088 s 5.087 -2.282 5.087 -5.088 C 25.034 55.806 22.752 53.523 19.947 53.523 z"
+                    d="M 60.105 31.849 c 0 -0.819 -0.664 -1.483 -1.484 -1.483 H 31.379 c -0.819 0 -1.483 0.664 -1.483 1.483 s 0.664 1.483 1.483 1.483 h 27.242 C 59.44 33.332 60.105 32.668 60.105 31.849 z"
                     style="
                       stroke: none;
                       stroke-width: 1;
@@ -595,7 +598,7 @@
                     stroke-linecap="round"
                   />
                   <path
-                    d="M 75.84 61.609 c -0.19 0 -0.39 -0.02 -0.58 -0.06 c -0.2 -0.04 -0.39 -0.1 -0.57 -0.17 c -0.18 -0.07 -0.35 -0.17 -0.51 -0.28 c -0.17 -0.1 -0.32 -0.229 -0.46 -0.37 c -0.56 -0.56 -0.88 -1.33 -0.88 -2.12 s 0.32 -1.56 0.88 -2.119 c 0.14 -0.141 0.29 -0.261 0.45 -0.37 c 0.17 -0.11 0.34 -0.2 0.52 -0.28 c 0.181 -0.07 0.37 -0.13 0.561 -0.17 c 0.99 -0.2 2.02 0.12 2.71 0.82 c 0.56 0.56 0.88 1.329 0.88 2.119 s -0.32 1.561 -0.88 2.12 C 77.819 60.87 77.67 61 77.51 61.1 c -0.17 0.11 -0.34 0.21 -0.52 0.28 c -0.181 0.07 -0.37 0.13 -0.561 0.17 C 76.229 61.59 76.04 61.609 75.84 61.609 z"
+                    d="M 52.265 16.519 h -14.53 c -0.819 0 -1.484 0.664 -1.484 1.484 c 0 0.819 0.664 1.483 1.484 1.483 h 14.53 c 0.819 0 1.484 -0.664 1.484 -1.483 C 53.749 17.183 53.084 16.519 52.265 16.519 z"
                     style="
                       stroke: none;
                       stroke-width: 1;
@@ -611,7 +614,7 @@
                     stroke-linecap="round"
                   />
                   <path
-                    d="M 19.95 61.609 c -0.2 0 -0.4 -0.02 -0.59 -0.06 s -0.38 -0.1 -0.56 -0.17 s -0.36 -0.17 -0.52 -0.28 c -0.16 -0.109 -0.32 -0.229 -0.45 -0.37 c -0.56 -0.56 -0.88 -1.33 -0.88 -2.12 c 0 -0.189 0.02 -0.39 0.06 -0.59 c 0.03 -0.189 0.09 -0.37 0.17 -0.56 c 0.07 -0.18 0.16 -0.351 0.27 -0.51 c 0.11 -0.17 0.24 -0.32 0.37 -0.46 c 0.14 -0.141 0.3 -0.261 0.46 -0.37 c 0.16 -0.11 0.34 -0.21 0.52 -0.28 s 0.37 -0.13 0.56 -0.17 c 0.97 -0.2 2.01 0.12 2.71 0.82 c 0.56 0.56 0.88 1.329 0.88 2.119 s -0.32 1.561 -0.88 2.12 c -0.14 0.141 -0.29 0.261 -0.46 0.37 c -0.16 0.11 -0.33 0.21 -0.52 0.28 c -0.18 0.07 -0.37 0.13 -0.56 0.17 S 20.14 61.609 19.95 61.609 z"
+                    d="M 35.11 46.972 c -2.385 0 -4.325 2.161 -4.325 4.817 s 1.94 4.817 4.325 4.817 c 2.385 0 4.325 -2.161 4.325 -4.817 S 37.495 46.972 35.11 46.972 z M 35.11 53.638 c -0.736 0 -1.358 -0.847 -1.358 -1.85 s 0.622 -1.85 1.358 -1.85 c 0.736 0 1.358 0.847 1.358 1.85 S 35.846 53.638 35.11 53.638 z"
                     style="
                       stroke: none;
                       stroke-width: 1;
@@ -627,7 +630,23 @@
                     stroke-linecap="round"
                   />
                   <path
-                    d="M 87.377 43.279 l -9.706 -4.472 l -9.659 -11.621 c -2.052 -2.468 -5.07 -3.884 -8.279 -3.884 H 5.299 C 2.377 23.302 0 25.679 0 28.601 v 25.988 c 0 3.059 2.488 5.547 5.551 5.547 l 4.434 -0.014 c -0.075 -0.494 -0.126 -0.996 -0.126 -1.511 c 0 -5.562 4.525 -10.087 10.087 -10.087 s 10.087 4.525 10.087 10.087 c 0 0.511 -0.05 1.009 -0.124 1.5 h 35.968 c -0.074 -0.491 -0.124 -0.989 -0.124 -1.5 c 0 -5.562 4.525 -10.087 10.087 -10.087 s 10.087 4.525 10.087 10.087 c 0 0.518 -0.052 1.024 -0.127 1.521 l 0.64 0.004 c 1.963 0 3.56 -1.597 3.56 -3.56 v -9.2 C 90 45.622 88.971 44.013 87.377 43.279 z M 57.163 38.528 c -0.318 0 -0.578 -0.259 -0.578 -0.578 V 26.302 h 3.147 c 2.315 0 4.492 1.021 5.973 2.802 l 7.832 9.424 H 57.163 z"
+                    d="M 54.89 46.972 c -2.385 0 -4.325 2.161 -4.325 4.817 s 1.94 4.817 4.325 4.817 c 2.385 0 4.325 -2.161 4.325 -4.817 S 57.275 46.972 54.89 46.972 z M 54.89 53.638 c -0.736 0 -1.358 -0.847 -1.358 -1.85 s 0.622 -1.85 1.358 -1.85 c 0.736 0 1.358 0.847 1.358 1.85 S 55.626 53.638 54.89 53.638 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(255, 255, 255);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M 68.023 87.427 c -7.494 0 -15.448 -1.599 -23.815 -4.798 c -13.639 -5.807 -27.42 -5.801 -42.182 -0.005 c -0.765 0.298 -1.624 -0.076 -1.923 -0.839 c -0.299 -0.762 0.076 -1.624 0.839 -1.923 c 15.523 -6.095 30.038 -6.089 44.377 0.016 c 15.927 6.09 30.257 6.107 42.54 0.035 c 0.734 -0.362 1.625 -0.062 1.988 0.672 c 0.363 0.735 0.062 1.625 -0.672 1.988 C 82.628 85.808 75.559 87.427 68.023 87.427 z"
                     style="
                       stroke: none;
                       stroke-width: 1;

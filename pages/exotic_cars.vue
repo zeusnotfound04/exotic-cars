@@ -10,7 +10,7 @@
         <div class="col-md-9 ftco-animate pb-5">
           <p class="breadcrumbs">
             <span class="mr-2"
-              ><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a
+              ><a href="#">Home <i class="ion-ios-arrow-forward"></i></a
             ></span>
             <span>Exotic Cars <i class="ion-ios-arrow-forward"></i></span>
           </p>
@@ -25,16 +25,16 @@
       <div class="row">
         <div class="col-md-4">
           <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-1.jpg)"></div>
+            <div class="img rounded d-flex align-items-end" style="background-image: url(img/lu.jpg)"></div>
             <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
+              <h2 class="mb-0"><a href="car-single.html">Lamborghini Urus</a></h2>
               <div class="d-flex mb-3">
-                <span class="cat">Cheverolet</span>
-                <p class="price ml-auto">$500 <span>/day</span></p>
+                <span class="cat">Lamborghini</span>
+                <p class="price ml-auto">$1,250 <span>/day</span></p>
               </div>
               <p class="d-flex mb-0 d-block">
                 <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
+                  :to="{path: 'custom_request', query: {vehicle: 'Lamborghini Urus'}}"
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
@@ -45,16 +45,16 @@
         </div>
         <div class="col-md-4">
           <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-2.jpg)"></div>
+            <div class="img rounded d-flex align-items-end" style="background-image: url(img/mb63.jpg)"></div>
             <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Range Rover</a></h2>
+              <h2 class="mb-0"><a href="car-single.html">Benz g63</a></h2>
               <div class="d-flex mb-3">
-                <span class="cat">Subaru</span>
-                <p class="price ml-auto">$500 <span>/day</span></p>
+                <span class="cat">Mercedes Benz</span>
+                <p class="price ml-auto">$1,000 <span>/day</span></p>
               </div>
               <p class="d-flex mb-0 d-block">
                 <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Range Rover'}}"
+                  :to="{path: 'custom_request', query: {vehicle: 'Benz g63'}}"
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
@@ -65,16 +65,16 @@
         </div>
         <div class="col-md-4">
           <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-3.jpg)"></div>
+            <div class="img rounded d-flex align-items-end" style="background-image: url(img/rr_cullinam.jpg)"></div>
             <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
+              <h2 class="mb-0"><a href="car-single.html">Rolls Royce Cullinan</a></h2>
               <div class="d-flex mb-3">
-                <span class="cat">Cheverolet</span>
-                <p class="price ml-auto">$500 <span>/day</span></p>
+                <span class="cat">Rolls Royce</span>
+                <p class="price ml-auto">$1,500 <span>/day</span></p>
               </div>
               <p class="d-flex mb-0 d-block">
                 <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
+                  :to="{path: 'custom_request', query: {vehicle: 'Rolls Royce Cullinan'}}"
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
@@ -86,16 +86,16 @@
 
         <div class="col-md-4">
           <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-4.jpg)"></div>
+            <div class="img rounded d-flex align-items-end" style="background-image: url(img/mb_s580.jpg)"></div>
             <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
+              <h2 class="mb-0"><a href="car-single.html">Benz s580 Maybach</a></h2>
               <div class="d-flex mb-3">
-                <span class="cat">Cheverolet</span>
-                <p class="price ml-auto">$500 <span>/day</span></p>
+                <span class="cat">Mercedes Benz</span>
+                <p class="price ml-auto">$900 <span>/day</span></p>
               </div>
               <p class="d-flex mb-0 d-block">
                 <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
+                  :to="{path: 'custom_request', query: {vehicle: 'Benz s580 Maybach'}}"
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
@@ -106,16 +106,16 @@
         </div>
         <div class="col-md-4">
           <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-5.jpg)"></div>
+            <div class="img rounded d-flex align-items-end" style="background-image: url(img/mclaren_570S.jpg)"></div>
             <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Range Rover</a></h2>
+              <h2 class="mb-0"><a href="car-single.html">Mclaren 570S Spyder</a></h2>
               <div class="d-flex mb-3">
-                <span class="cat">Subaru</span>
+                <span class="cat">Mclaren</span>
                 <p class="price ml-auto">$500 <span>/day</span></p>
               </div>
               <p class="d-flex mb-0 d-block">
                 <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Range Rover'}}"
+                  :to="{path: 'custom_request', query: {vehicle: 'Mclaren 570S Spyder'}}"
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
@@ -126,16 +126,16 @@
         </div>
         <div class="col-md-4">
           <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-6.jpg)"></div>
+            <div class="img rounded d-flex align-items-end" style="background-image: url(img/ferrari_488.jpg)"></div>
             <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
+              <h2 class="mb-0"><a href="car-single.html">Ferrari 488 Spider</a></h2>
               <div class="d-flex mb-3">
-                <span class="cat">Cheverolet</span>
-                <p class="price ml-auto">$500 <span>/day</span></p>
+                <span class="cat">Ferrari</span>
+                <p class="price ml-auto">$1,250 <span>/day</span></p>
               </div>
               <p class="d-flex mb-0 d-block">
                 <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
+                  :to="{path: 'custom_request', query: {vehicle: 'Ferrari 488 Spider'}}"
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
@@ -149,116 +149,13 @@
           <div class="car-wrap rounded ftco-animate">
             <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-7.jpg)"></div>
             <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
+              <h2 class="mb-0"><a href="car-single.html">Audi r8</a></h2>
               <div class="d-flex mb-3">
-                <span class="cat">Cheverolet</span>
+                <span class="cat">Audi</span>
                 <p class="price ml-auto">$500 <span>/day</span></p>
               </div>
               <p class="d-flex mb-0 d-block">
-                <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
-                  class="btn btn-primary py-2 mr-1"
-                  >Book Now</nuxt-link
-                >
-                <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-8.jpg)"></div>
-            <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Range Rover</a></h2>
-              <div class="d-flex mb-3">
-                <span class="cat">Subaru</span>
-                <p class="price ml-auto">$500 <span>/day</span></p>
-              </div>
-              <p class="d-flex mb-0 d-block">
-                <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Range Rover'}}"
-                  class="btn btn-primary py-2 mr-1"
-                  >Book Now</nuxt-link
-                >
-                <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-9.jpg)"></div>
-            <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-              <div class="d-flex mb-3">
-                <span class="cat">Cheverolet</span>
-                <p class="price ml-auto">$500 <span>/day</span></p>
-              </div>
-              <p class="d-flex mb-0 d-block">
-                <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
-                  class="btn btn-primary py-2 mr-1"
-                  >Book Now</nuxt-link
-                >
-                <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-10.jpg)"></div>
-            <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-              <div class="d-flex mb-3">
-                <span class="cat">Cheverolet</span>
-                <p class="price ml-auto">$500 <span>/day</span></p>
-              </div>
-              <p class="d-flex mb-0 d-block">
-                <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
-                  class="btn btn-primary py-2 mr-1"
-                  >Book Now</nuxt-link
-                >
-                <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-11.jpg)"></div>
-            <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Range Rover</a></h2>
-              <div class="d-flex mb-3">
-                <span class="cat">Subaru</span>
-                <p class="price ml-auto">$500 <span>/day</span></p>
-              </div>
-              <p class="d-flex mb-0 d-block">
-                <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
-                  class="btn btn-primary py-2 mr-1"
-                  >Book Now</nuxt-link
-                >
-                <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="car-wrap rounded ftco-animate">
-            <div class="img rounded d-flex align-items-end" style="background-image: url(img/car-12.jpg)"></div>
-            <div class="text">
-              <h2 class="mb-0"><a href="car-single.html">Mercedes Grand Sedan</a></h2>
-              <div class="d-flex mb-3">
-                <span class="cat">Cheverolet</span>
-                <p class="price ml-auto">$500 <span>/day</span></p>
-              </div>
-              <p class="d-flex mb-0 d-block">
-                <nuxt-link
-                  :to="{path: 'custom_request', query: {vehicle: 'Mercedes Grand Sedan'}}"
-                  class="btn btn-primary py-2 mr-1"
+                <nuxt-link :to="{path: 'custom_request', query: {vehicle: 'Audi r8'}}" class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
                 <a href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a>

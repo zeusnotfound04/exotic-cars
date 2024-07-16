@@ -135,32 +135,23 @@ export default {
               >Instant Booking</nuxt-link
             >
           </li> -->
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+          <li class="nav-item">
+            <nuxt-link class="nav-link menu-link" to="/exotic_cars">Exotic Cars</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link menu-link" to="/yachts">Yachts</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link menu-link" to="/">Houses</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link menu-link" to="/security_deposits" @click="visible = !visible"
+              >Security Deposits</nuxt-link
             >
-              Yatchs/Houses
-            </a>
-            <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Yatchs</a>
-              <a class="dropdown-item" href="#">Airbnbs</a>
-              <!-- <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Events</a> -->
-            </div>
           </li>
-
-          <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/exotic_cars" @click="visible = !visible">Exotic Cars</nuxt-link>
-          </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/services" @click="visible = !visible">Services</nuxt-link>
-          </li>
+          </li> -->
           <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/blog" @click="visible = !visible">Blog</nuxt-link>
           </li>
