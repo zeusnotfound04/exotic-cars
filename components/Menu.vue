@@ -103,7 +103,6 @@ export default {
 
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="#"> </a>
       <div class="navbar-brand">
         <nuxt-link to="/" class="d-inline-flex link-body-emphasis text-decoration-none">
           <div style="width: 150px; height: 68px; position: relative; left: 34px; top: 0px">
@@ -142,7 +141,7 @@ export default {
             <nuxt-link class="nav-link menu-link" to="/yachts">Yachts</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/">Houses</nuxt-link>
+            <nuxt-link class="nav-link menu-link" to="/houses">Houses</nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/security_deposits" @click="visible = !visible"

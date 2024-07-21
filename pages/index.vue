@@ -96,7 +96,7 @@
             </div>
             <div class="item">
               <div class="car-wrap rounded ftco-animate">
-                <div class="img rounded d-flex align-items-end" style="background-image: url('img/car-4.jpg')"></div>
+                <div class="img rounded d-flex align-items-end" style="background-image: url('img/mb_s580.jpg')"></div>
                 <div class="text">
                   <h2 class="mb-0"><a href="#">Benz s580 Maybach</a></h2>
                   <div class="d-flex mb-3">

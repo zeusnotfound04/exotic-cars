@@ -220,6 +220,7 @@ $(function() {
 	var contentWayPoint = function() {
 		console.log('content way animated');
 		var i = 0;
+		$('#ftco-nav').collapse('hide');
 		$('.ftco-animate').waypoint( function( direction ) {
 			console.log('content way animated');
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {

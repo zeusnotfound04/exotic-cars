@@ -23,44 +23,44 @@
     <div class="container">
       <form>
         <div class="form-group row">
-          <label for="first_name" class="col-sm-2 col-form-label">First Name</label>
-          <div class="col-sm-3">
+          <label for="first_name" class="col-sm-3 col-form-label">First Name:</label>
+          <div class="col-sm-6">
             <input type="text" class="form-control" id="first_name" autocomplete="given-name" v-model="first_name" />
           </div>
         </div>
         <div class="form-group row">
-          <label for="last_name" class="col-sm-2 col-form-label">Last Name</label>
-          <div class="col-sm-3">
+          <label for="last_name" class="col-sm-3 col-form-label">Last Name:</label>
+          <div class="col-sm-6">
             <input type="text" class="form-control" id="last_name" autocomplete="family-name" v-model="last_name" />
           </div>
         </div>
         <div class="form-group row">
-          <label for="phone" class="col-sm-2 col-form-label">Vehicle</label>
-          <div class="col-sm-3">
-            <input type="phone" class="form-control" id="vehicle" v-model="vehicle" />
+          <label for="vehicle" class="col-sm-3 col-form-label">Interested in:</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="vehicle" v-model="vehicle" />
           </div>
         </div>
         <div class="form-group row">
-          <label for="email" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-3">
+          <label for="email" class="col-sm-3 col-form-label">Email:</label>
+          <div class="col-sm-6">
             <input type="email" class="form-control" id="email" v-model="email" />
           </div>
         </div>
         <div class="form-group row">
-          <label for="phone" class="col-sm-2 col-form-label">Phone</label>
-          <div class="col-sm-3">
+          <label for="phone" class="col-sm-3 col-form-label">Phone:</label>
+          <div class="col-sm-6">
             <input type="phone" class="form-control" id="phone" v-model="phone" />
           </div>
         </div>
         <div class="form-group row input-daterange-container">
-          <label for="start_date" class="col-sm-2 col-form-label">Start Date</label>
-          <div class="col-sm-3">
+          <label for="start_date" class="col-sm-3 col-form-label">Start Date:</label>
+          <div class="col-sm-6">
             <input type="text" class="form-control" id="start_date" value="2012-04-05" />
           </div>
         </div>
         <div class="form-group row input-daterange-container">
-          <label for="end_date" class="col-sm-2 col-form-label">End Date</label>
-          <div class="col-sm-3">
+          <label for="end_date" class="col-sm-3 col-form-label">End Date:</label>
+          <div class="col-sm-6">
             <input type="text" class="form-control" id="end_date" value="2012-04-19" />
           </div>
         </div>
