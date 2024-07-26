@@ -14,14 +14,14 @@
             ></span>
             <span>Houses <i class="ion-ios-arrow-forward"></i></span>
           </p>
-          <h1 class="mb-3 bread">Choose Your House</h1>
+          <h1 class="mb-3 bread">Coming Soon..</h1>
         </div>
       </div>
     </div>
   </section>
 
   <section class="ftco-section bg-light">
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
         <div class="col-md-6 col-lg-4">
           <div class="car-wrap rounded ftco-animate">
@@ -40,7 +40,7 @@
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
-                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
+                <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
               </p>
             </div>
           </div>
@@ -52,16 +52,16 @@
             <ul>
               <li><a href="#">&lt;</a></li>
               <li class="active"><span>1</span></li>
-              <!-- <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li> -->
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
               <li><a href="#">&gt;</a></li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 <script>

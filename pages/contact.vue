@@ -86,8 +86,18 @@
         </div>
       </div>
       <div class="row justify-content-center">
+        <h2 class="mb-3 bread">Check Our Location</h2>
         <div class="col-md-12">
-          <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 90vw; height: 300px" />
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d114608.13546475607!2d-80.261839!3d26.147703!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d906309cbcdc75%3A0x74b3b6a38de847e0!2s8320%20W%20Sunrise%20Blvd%2C%20Plantation%2C%20FL%2033322!5e0!3m2!1sen!2sus!4v1721783346619!5m2!1sen!2sus"
+            width="100%"
+            height="600"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <!-- <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 90vw; height: 300px" /> -->
         </div>
       </div>
     </div>

@@ -3,10 +3,14 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  
   app: {
     // pageTransition: { name: 'page', mode: 'out-in' },
     baseURL: '/',
     head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
       title: "Miami Exotic Cars" || '',
       meta: [
         { charset: 'utf-8' },
@@ -17,24 +21,24 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap' },
-        { rel:"manifest", href:"site.webmanifest"},
+        { rel:"manifest", href:"/site.webmanifest"},
         { rel:"mask-icon", href:"safari-pinned-tab.svg", color:"#5bbad5"}
       ],  
       script: [
-        {src:"js/jquery.min.js"},
-        {src:"js/jquery-migrate-3.0.1.min.js"},
-        {src:"js/popper.min.js"},
-        {src:"js/bootstrap.min.js"},
-        {src:"js/jquery.easing.1.3.js"},
-        {src:"js/jquery.waypoints.min.js"},
-        {src:"js/jquery.stellar.min.js"},
-        {src:"js/owl.carousel.min.js"},
-        {src:"js/jquery.magnific-popup.min.js"},
-        {src:"js/aos.js"},
-        {src:"js/jquery.animateNumber.min.js"},
-        {src:"js/bootstrap-datepicker.js"},
-        {src:"js/jquery.timepicker.min.js"},
-        {src:"js/scrollax.min.js"},
+        {src:"/js/jquery.min.js"},
+        {src:"/js/jquery-migrate-3.0.1.min.js"},
+        {src:"/js/popper.min.js"},
+        {src:"/js/bootstrap.min.js"},
+        {src:"/js/jquery.easing.1.3.js"},
+        {src:"/js/jquery.waypoints.min.js"},
+        {src:"/js/jquery.stellar.min.js"},
+        {src:"/js/owl.carousel.min.js"},
+        {src:"/js/jquery.magnific-popup.min.js"},
+        {src:"/js/aos.js"},
+        {src:"/js/jquery.animateNumber.min.js"},
+        {src:"/js/bootstrap-datepicker.js"},
+        {src:"/js/jquery.timepicker.min.js"},
+        {src:"/js/scrollax.min.js"},
       ],
     },
   },
@@ -107,6 +111,7 @@ export default defineNuxtConfig({
     }
   },
 
-  build: { transpile: ["@fawmi/vue-google-maps"] },
-
+  build: { transpile: [] },
+  // build: { transpile: ["@fawmi/vue-google-maps"] },
+  spaLoadingTemplate: false,
 });

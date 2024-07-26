@@ -38,7 +38,7 @@
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
-                <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
+                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
-                <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
+                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
               </p>
             </div>
           </div>
@@ -78,7 +78,7 @@
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
-                <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
+                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
               </p>
             </div>
           </div>
@@ -99,7 +99,7 @@
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
-                <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
+                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
               </p>
             </div>
           </div>
@@ -119,7 +119,7 @@
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
-                <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
+                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
               </p>
             </div>
           </div>
@@ -139,7 +139,7 @@
                   class="btn btn-primary py-2 mr-1"
                   >Book Now</nuxt-link
                 >
-                <a href="#" class="btn btn-secondary py-2 ml-1">Details</a>
+                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
               </p>
             </div>
           </div>
