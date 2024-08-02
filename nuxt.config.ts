@@ -26,39 +26,35 @@ export default defineNuxtConfig({
       ],  
       script: [
         {src:"/js/jquery.min.js"},
-        {src:"/js/jquery-migrate-3.0.1.min.js"},
+        {src:"/js/jquery-migrate-3.0.1.min.js", defer:true},
         {src:"/js/popper.min.js"},
-        {src:"/js/bootstrap.min.js"},
+        {src:"/js/bootstrap.min.js", defer:true},
         {src:"/js/jquery.easing.1.3.js"},
         {src:"/js/jquery.waypoints.min.js"},
-        {src:"/js/jquery.stellar.min.js"},
-        {src:"/js/owl.carousel.min.js"},
+        {src:"/js/jquery.stellar.min.js", defer:true},
+        {src:"/js/owl.carousel.min.js", defer:true},
         {src:"/js/jquery.magnific-popup.min.js"},
-        {src:"/js/aos.js"},
+        {src:"/js/aos.js", defer:true},
         {src:"/js/jquery.animateNumber.min.js"},
-        {src:"/js/bootstrap-datepicker.js"},
-        {src:"/js/jquery.timepicker.min.js"},
-        {src:"/js/scrollax.min.js"},
+        {src:"/js/bootstrap-datepicker.js", defer:true},
+        {src:"/js/jquery.timepicker.min.js", defer:true},
+        {src:"/js/scrollax.min.js", defer:true},
       ],
     },
   },
   ssr: false,
 
-  modules: [
-    // ...
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: [
-          // automatically imports `defineStore`
-          'defineStore',
-        ],
-      },
-    ],
-
-    // '@nuxtjs/pwa',
-    
-  ],
+  modules: [// ...
+  // '@nuxtjs/pwa',
+  [
+    '@pinia/nuxt',
+    {
+      autoImports: [
+        // automatically imports `defineStore`
+        'defineStore',
+      ],
+    },
+  ], "@nuxtjs/seo"],
 // PWA module configuration: https://go.nuxtjs.dev/pwa
 // pwa: {
 //   // https://pwa.nuxtjs.org/manifest
@@ -113,5 +109,11 @@ export default defineNuxtConfig({
 
   build: { transpile: [] },
   // build: { transpile: ["@fawmi/vue-google-maps"] },
-  spaLoadingTemplate: false,
+  site: {
+    url: 'https://example.com',
+    name: 'Awesome Site',
+    description: 'Welcome to my awesome site!',
+    defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
+    trailingSlash: false,
+  }
 });

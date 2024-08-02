@@ -125,7 +125,7 @@
       <div class="row no-gutters">
         <div
           class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
-          style="background-image: url('/img/about.png')"
+          style="background-image: url('/img/about.webp')"
         ></div>
         <div class="col-md-6 wrap-about ftco-animate">
           <div class="heading-section heading-section-white pl-md-5">

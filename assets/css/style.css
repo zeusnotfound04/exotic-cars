@@ -14362,7 +14362,7 @@ textarea.form-control {
   font-style: italic;
 }
 
-#ftco-loader {
+/* #ftco-loader {
   position: fixed;
   width: 96px;
   height: 96px;
@@ -14381,9 +14381,9 @@ textarea.form-control {
   -o-transition: opacity 0.2s ease-out, visibility 0s linear 0.2s;
   transition: opacity 0.2s ease-out, visibility 0s linear 0.2s;
   z-index: 1000;
-}
+} */
 
-#ftco-loader.fullscreen {
+/* #ftco-loader.fullscreen {
   padding: 0;
   left: 0;
   top: 0;
@@ -14396,17 +14396,17 @@ textarea.form-control {
   border-radius: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
-}
+} */
 
-#ftco-loader.show {
+/* #ftco-loader.show {
   -webkit-transition: opacity 0.4s ease-out, visibility 0s linear 0s;
   -o-transition: opacity 0.4s ease-out, visibility 0s linear 0s;
   transition: opacity 0.4s ease-out, visibility 0s linear 0s;
   visibility: visible;
   opacity: 1;
-}
+} */
 
-#ftco-loader .circular {
+/* #ftco-loader .circular {
   -webkit-animation: loader-rotate 2s linear infinite;
   animation: loader-rotate 2s linear infinite;
   position: absolute;
@@ -14416,15 +14416,15 @@ textarea.form-control {
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
-}
+} */
 
-#ftco-loader .path {
+/* #ftco-loader .path {
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
   -webkit-animation: loader-dash 1.5s ease-in-out infinite;
   animation: loader-dash 1.5s ease-in-out infinite;
   stroke-linecap: round;
-}
+} */
 
 @-webkit-keyframes loader-rotate {
   100% {
