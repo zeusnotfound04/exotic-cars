@@ -151,9 +151,9 @@ export default {
           <!-- <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/services" @click="visible = !visible">Services</nuxt-link>
           </li> -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/blog" @click="visible = !visible">Blog</nuxt-link>
-          </li>
+          </li> -->
           <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/contact" @click="visible = !visible">Contact</nuxt-link>
           </li>

@@ -30,6 +30,8 @@
             <h2 class="ftco-heading-2">Information</h2>
             <ul class="list-unstyled">
               <li><nuxt-link class="py-2 d-block" to="/about">About</nuxt-link></li>
+              <li><nuxt-link class="py-2 d-block" to="/blog">Blog</nuxt-link></li>
+              <li><nuxt-link class="py-2 d-block" to="/why_us">Why us?</nuxt-link></li>
               <li><nuxt-link class="py-2 d-block" to="/services">Services</nuxt-link></li>
               <li>
                 <nuxt-link class="py-2 d-block" to="/terms-conditions">Term and Conditions</nuxt-link>
@@ -61,6 +63,11 @@
                   <a href="mailto:admin@miamiexoticrents.com"
                     ><span class="icon icon-envelope"></span><span class="text">admin@miamiexoticrents.com</span></a
                   >
+                </li>
+                <li>
+                  <a class="float" href="https://api.whatsapp.com/send?phone=19542882717&text=I%20need%20help"
+                    ><span class="fa fa-whatsapp my-float"></span>
+                  </a>
                 </li>
               </ul>
             </div>

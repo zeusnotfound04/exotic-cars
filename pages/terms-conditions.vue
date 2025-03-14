@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <Title>Terms and Conditions</Title>
+    <Meta name="description" content="terms and conditions exotic cars" />
+  </Head>
   <div>
     <section class="hero-wrap hero-wrap-2">
       <div class="overlay"></div>
@@ -129,3 +133,13 @@
   height: 100px !important;
 }
 </style>
+<script>
+export default {
+  created: function () {
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "/js/main.js";
+    document.body.appendChild(script);
+  },
+};
+</script>

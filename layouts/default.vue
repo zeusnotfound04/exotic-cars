@@ -8,3 +8,14 @@
     <!-- loader -->
   </div>
 </template>
+<script setup>
+const route = useRoute();
+useHead(() => ({
+  link: [
+    {
+      rel: "canonical",
+      href: "https://miamiexoticrents.com" + route.path,
+    },
+  ],
+}));
+</script>

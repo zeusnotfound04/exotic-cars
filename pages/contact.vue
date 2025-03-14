@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <Title>Contact Us</Title>
+    <Meta name="description" content="contact us miami exotic rents" />
+  </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
     style="background-image: url('/img/bg_3.jpg')"
@@ -156,7 +160,7 @@ export default {
   created: function () {
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "js/main.js";
+    script.src = "/js/main.js";
     document.body.appendChild(script);
   },
 };

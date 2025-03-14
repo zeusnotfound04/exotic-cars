@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <Title>Custom Request</Title>
+    <Meta name="description" content="clients can submit a form to book miami exotic rents" />
+  </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
     style="background-image: url('/img/bg_3.jpg')"
@@ -145,7 +149,7 @@ export default {
   created: function () {
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "js/main.js";
+    script.src = "/js/main.js";
     document.body.appendChild(script);
     $(function () {
       const currentDate = new Date();

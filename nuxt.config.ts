@@ -11,34 +11,36 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
-      title: "Miami Exotic Cars" || '',
+      title: "Miami Exotic Cars",
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-        { name:"theme-color", content:"#ffffff"}
+        { name:"theme-color", content:"#ffffff"},
+        { name:"google-site-verification", content:"Lq5PH6TMBO64FVZHKEcbyADxPr68BMyOTQFaA7HZKiU"}
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap' },
         { rel:"manifest", href:"/site.webmanifest"},
-        { rel:"mask-icon", href:"safari-pinned-tab.svg", color:"#5bbad5"}
-      ],  
+        { rel:"mask-icon", href:"safari-pinned-tab.svg", color:"#5bbad5"},
+        { rel: 'stylesheet', type: "text/css", href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' }
+      ],
       script: [
-        {src:"/js/jquery.min.js"},
-        {src:"/js/jquery-migrate-3.0.1.min.js", defer:true},
-        {src:"/js/popper.min.js"},
-        {src:"/js/bootstrap.min.js", defer:true},
-        {src:"/js/jquery.easing.1.3.js"},
-        {src:"/js/jquery.waypoints.min.js"},
-        {src:"/js/jquery.stellar.min.js", defer:true},
-        {src:"/js/owl.carousel.min.js", defer:true},
-        {src:"/js/jquery.magnific-popup.min.js"},
-        {src:"/js/aos.js", defer:true},
-        {src:"/js/jquery.animateNumber.min.js"},
-        {src:"/js/bootstrap-datepicker.js", defer:true},
-        {src:"/js/jquery.timepicker.min.js", defer:true},
-        {src:"/js/scrollax.min.js", defer:true},
+        {tagPosition: 'bodyClose',src:"/js/jquery.min.js"},
+        {tagPosition: 'bodyClose',src:"/js/jquery-migrate-3.0.1.min.js", defer:true},
+        {tagPosition: 'bodyClose',src:"/js/popper.min.js"},
+        {tagPosition: 'bodyClose',src:"/js/bootstrap.min.js", defer:true},
+        {tagPosition: 'bodyClose',src:"/js/jquery.easing.1.3.js"},
+        {tagPosition: 'bodyClose',src:"/js/jquery.waypoints.min.js"},
+        {tagPosition: 'bodyClose',src:"/js/jquery.stellar.min.js", defer:true},
+        {tagPosition: 'bodyClose',src:"/js/owl.carousel.min.js", defer:true},
+        {tagPosition: 'bodyClose',src:"/js/jquery.magnific-popup.min.js"},
+        {tagPosition: 'bodyClose',src:"/js/aos.js", defer:true},
+        {tagPosition: 'bodyClose',src:"/js/jquery.animateNumber.min.js"},
+        {tagPosition: 'bodyClose',src:"/js/bootstrap-datepicker.js", defer:true},
+        {tagPosition: 'bodyClose',src:"/js/jquery.timepicker.min.js", defer:true},
+        {tagPosition: 'bodyClose',src:"/js/scrollax.min.js", defer:true},
       ],
     },
   },
@@ -46,6 +48,7 @@ export default defineNuxtConfig({
 
   modules: [// ...
   // '@nuxtjs/pwa',
+  '@nuxt/image',
   [
     '@pinia/nuxt',
     {
@@ -110,10 +113,13 @@ export default defineNuxtConfig({
   build: { transpile: [] },
   // build: { transpile: ["@fawmi/vue-google-maps"] },
   site: {
-    url: 'https://example.com',
-    name: 'Awesome Site',
+    url: 'https://miamiexoticrents.com',
+    name: 'Miami Exotic Rents',
     description: 'Welcome to my awesome site!',
     defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
     trailingSlash: false,
+  },
+  seo: {
+    redirectToCanonicalSiteUrl: true
   }
 });

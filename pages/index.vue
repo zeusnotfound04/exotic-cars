@@ -1,7 +1,14 @@
 <template>
+  <Head>
+    <Title>Exotic Cars</Title>
+    <Meta
+      name="description"
+      content="exotic cars, is our fleet  oveview, here you can see our avaliable cars for rent and our entire fleet a-z"
+    />
+  </Head>
   <div
     class="hero-wrap ftco-degree-bg"
-    style="background-image: url('img/bg_1.jpg')"
+    style="background-image: url('/img/bg_1.jpg')"
     data-stellar-background-ratio="0.5"
   >
     <div class="overlay"></div>
@@ -33,32 +40,12 @@
           <div class="carousel-car owl-carousel">
             <div class="item">
               <div class="car-wrap rounded ftco-animate">
-                <div class="img rounded d-flex align-items-end" style="background-image: url('/img/lu.jpg')"></div>
-                <div class="text">
-                  <h2 class="mb-0"><a href="#">Lamborghini Urus</a></h2>
-                  <div class="d-flex mb-3">
-                    <span class="cat">Lamborghini</span>
-                    <p class="price ml-auto">$1,250 <span>/day</span></p>
-                  </div>
-                  <p class="d-flex mb-0 d-block">
-                    <nuxt-link
-                      :to="{path: 'custom_request', query: {vehicle: 'Lamborghini Urus'}}"
-                      class="btn btn-primary py-2 mr-1"
-                      >Book Now</nuxt-link
-                    >
-                    <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="car-wrap rounded ftco-animate">
                 <div class="img rounded d-flex align-items-end" style="background-image: url('/img/mb63.jpg')"></div>
                 <div class="text">
                   <h2 class="mb-0"><a href="#">Benz g63</a></h2>
                   <div class="d-flex mb-3">
                     <span class="cat">Mercedes Benz</span>
-                    <p class="price ml-auto">$1,000 <span>/day</span></p>
+                    <p class="price ml-auto">$900<span>/day</span></p>
                   </div>
                   <p class="d-flex mb-0 d-block">
                     <nuxt-link
@@ -75,7 +62,7 @@
               <div class="car-wrap rounded ftco-animate">
                 <div
                   class="img rounded d-flex align-items-end"
-                  style="background-image: url('img/rr_cullinam.jpg')"
+                  style="background-image: url('/img/rr_cullinam.jpg')"
                 ></div>
                 <div class="text">
                   <h2 class="mb-0"><a href="#">Rolls Royce Cullinan</a></h2>
@@ -96,7 +83,7 @@
             </div>
             <div class="item">
               <div class="car-wrap rounded ftco-animate">
-                <div class="img rounded d-flex align-items-end" style="background-image: url('img/mb_s580.jpg')"></div>
+                <div class="img rounded d-flex align-items-end" style="background-image: url('/img/mb_s580.jpg')"></div>
                 <div class="text">
                   <h2 class="mb-0"><a href="#">Benz s580 Maybach</a></h2>
                   <div class="d-flex mb-3">
@@ -679,7 +666,7 @@
     <div class="container">
       <div class="row justify-content-end">
         <div class="col-md-6 heading-section heading-section-white ftco-animate">
-          <h2 class="mb-3">Live the miami lifestyle. Only at MiamiExoticRents</h2>
+          <h2 class="mb-3">#1 Source For Exotic Needs All Around South Florida.</h2>
           <nuxt-link class="btn btn-primary btn-lg" to="/exotic_cars" @click="visible = !visible"
             >Exotic Rents</nuxt-link
           >
@@ -690,7 +677,7 @@
 </template>
 <style scoped>
 .ftco-degree-bg {
-  background-image: url("img/bg_1.jpg");
+  background-image: url("/img/bg_1.jpg");
 }
 </style>
 <script>
@@ -698,7 +685,7 @@ export default {
   created: function () {
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "js/main.js";
+    script.src = "/js/main.js";
     document.body.appendChild(script);
   },
 };

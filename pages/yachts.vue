@@ -1,7 +1,11 @@
 <template>
+  <Head>
+    <Title>Yachts</Title>
+    <Meta name="description" content="yachts exotic cars" />
+  </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
-    style="background-image: url('img/flybridge.jpg')"
+    style="background-image: url('/img/flybridge.jpg')"
     data-stellar-background-ratio="0.5"
   >
     <div class="overlay"></div>
@@ -69,7 +73,7 @@ export default {
   created: function () {
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "js/main.js";
+    script.src = "/js/main.js";
     document.body.appendChild(script);
   },
 };
