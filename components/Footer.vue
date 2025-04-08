@@ -47,7 +47,7 @@
         </div>
         <div class="col-md-5">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Have a Questions?</h2>
+            <h2 class="ftco-heading-2">Have a Question?</h2>
             <div class="block-23 mb-3">
               <ul>
                 <li>
@@ -55,8 +55,8 @@
                   ><span class="text">8320 W Sunrise Blvd, Plantation, FL 33322</span>
                 </li>
                 <li>
-                  <a href="tel:+13059219547"
-                    ><span class="icon icon-phone"></span><span class="text">+1 305 921 9547</span></a
+                  <a href="tel:+19542882717"
+                    ><span class="icon icon-phone"></span><span class="text">+1 954-288-2717</span></a
                   >
                 </li>
                 <li>

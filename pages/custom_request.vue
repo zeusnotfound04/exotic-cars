@@ -123,27 +123,35 @@ export default {
         $toast.error("Oh no, please fill all the inputs to continue!");
         return false;
       }
-      console.log(post_data);
-      $fetch("/api/register_submission/", {
-        method: "POST",
-        body: post_data,
-      }).then(
-        (res) => {
-          $toast.success("Thank you for your submission, we will contact you shortly!");
-          if (error) {
-            // dealing error
-            $toast.error("Oh no, there was an error, please try again later or contact us via emai!");
-            console.log(error);
-          } else {
-            console.log(data);
-          }
-        },
-        (error) => {
-          console.log("exception...");
-          console.log(error);
-          $toast.error("Oh no, there was an error, please try again later or contact us via emai!");
-        }
-      );
+      // console.log(post_data);
+      let data_string = "Name: " + this.first_name + " " + this.last_name;
+      data_string += ", Interested in: " + this.vehicle;
+      data_string += ", Contact: " + this.phone + " " + this.email;
+      data_string += ", Start: " + post_data.start_date.toLocaleDateString();
+      data_string += ", End: " + post_data.end_date.toLocaleDateString();
+      let url = "https://api.whatsapp.com/send?phone=19542882717&text=" + data_string;
+      window.open(url, "_blank");
+      $toast.success("Thank you for your submission, we will contact you shortly!");
+      //   $fetch("/api/register_submission/", {
+      //     method: "POST",
+      //     body: post_data,
+      //   }).then(
+      //     (res) => {
+      //       $toast.success("Thank you for your submission, we will contact you shortly!");
+      //       if (error) {
+      //         // dealing error
+      //         $toast.error("Oh no, there was an error, please try again later or contact us via emai!");
+      //         console.log(error);
+      //       } else {
+      //         console.log(data);
+      //       }
+      //     },
+      //     (error) => {
+      //       console.log("exception...");
+      //       console.log(error);
+      //       $toast.error("Oh no, there was an error, please try again later or contact us via emai!");
+      //     }
+      //   );
     },
   },
   created: function () {

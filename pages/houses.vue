@@ -52,6 +52,110 @@
             </div>
           </div>
         </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="car-wrap rounded ftco-animate">
+            <div
+              class="img rounded d-flex align-items-end"
+              style="background-image: url('/img/Skyline-Free-Pool-Spa-HotTub.jpg')"
+            ></div>
+            <div class="text">
+              <h2 class="mb-0"><a href="#">Skyline Free Pool Spa HotTub</a></h2>
+              <div class="d-flex mb-3 flex-column">
+                <span class="cat"></span>
+                <p class="price">$600 <span>Daily</span></p>
+                <div class="" style="font-weight: 500; color: black">cleaning fee $0</div>
+                <p>&nbsp;</p>
+              </div>
+              <p class="d-flex mb-0 d-block">
+                <nuxt-link
+                  :to="{path: 'custom_request', query: {vehicle: 'Skyline-Free-Pool-Spa-HotTub'}}"
+                  class="btn btn-primary py-2 mr-1"
+                  >Book Now</nuxt-link
+                >
+                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="car-wrap rounded ftco-animate">
+            <div
+              class="img rounded d-flex align-items-end"
+              style="background-image: url('/img/39th-Floor-1450-SqFt.jpg')"
+            ></div>
+            <div class="text">
+              <h2 class="mb-0"><a href="#">39th Floor 1450 SqFt</a></h2>
+              <div class="d-flex mb-3 flex-column">
+                <span class="cat"></span>
+                <p class="price">$885 <span>Daily</span></p>
+                <div class="" style="font-weight: 500; color: black">2 bed, 2 bath</div>
+                <p class="" style="font-weight: 500; color: black">&nbsp;</p>
+              </div>
+              <p class="d-flex mb-0 d-block">
+                <nuxt-link
+                  :to="{path: 'custom_request', query: {vehicle: '39th-Floor-1450-SqFt'}}"
+                  class="btn btn-primary py-2 mr-1"
+                  >Book Now</nuxt-link
+                >
+                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="car-wrap rounded ftco-animate">
+            <div
+              class="img rounded d-flex align-items-end"
+              style="background-image: url('/img/Fully-remodeled-corner-unit-all-ensuite.jpg')"
+            ></div>
+            <div class="text">
+              <h2 class="mb-0"><a href="#">Fully remodeled corner unit all ensuite</a></h2>
+              <div class="d-flex mb-3 flex-column">
+                <span class="cat"></span>
+                <p class="price">$800 <span>Daily</span></p>
+                <div class="" style="font-weight: 500; color: black">2 beds, 2 bathrooms</div>
+                <p class="" style="font-weight: 500; color: black">&nbsp;</p>
+              </div>
+              <p class="d-flex mb-0 d-block">
+                <nuxt-link
+                  :to="{path: 'custom_request', query: {vehicle: 'Fully-remodeled-corner-unit-all-ensuite'}}"
+                  class="btn btn-primary py-2 mr-1"
+                  >Book Now</nuxt-link
+                >
+                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="car-wrap rounded ftco-animate">
+            <div
+              class="img rounded d-flex align-items-end"
+              style="background-image: url('/img/Fully-Remodeled-Frontline-Bay-and-Pool.jpg')"
+            ></div>
+            <div class="text">
+              <h2 class="mb-0"><a href="#">Fully Remodeled Frontline Bay and Pool </a></h2>
+              <div class="d-flex mb-3 flex-column">
+                <span class="cat"></span>
+                <p class="price">$1,500 <span>Daily</span></p>
+                <div class="" style="font-weight: 500; color: black">2 beds, 2 bathrooms</div>
+                <p class="" style="font-weight: 500; color: black">&nbsp;</p>
+              </div>
+              <p class="d-flex mb-0 d-block">
+                <nuxt-link
+                  :to="{path: 'custom_request', query: {vehicle: 'Fully-Remodeled-Frontline-Bay-and-Pool '}}"
+                  class="btn btn-primary py-2 mr-1"
+                  >Book Now</nuxt-link
+                >
+                <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row mt-5">
         <div class="col text-center">

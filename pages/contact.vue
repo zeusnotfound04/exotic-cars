@@ -44,7 +44,7 @@
                 </div>
                 <p>
                   <span>Phone:</span>
-                  <a href="tel:13059219547">+1 305 921 9547</a>
+                  <a href="tel:9542882717">+1 954-288-2717</a>
                 </p>
               </div>
             </div>
@@ -134,26 +134,34 @@ export default {
         return false;
       }
       console.log(post_data);
-      $fetch("/api/contact_message/", {
-        method: "POST",
-        body: post_data,
-      }).then(
-        (res) => {
-          $toast.success("Thank you for contacting us, we will contact you shortly!");
-          if (error) {
-            // dealing error
-            $toast.error("Oh no, there was an error, please try again later or contact us via emai!");
-            console.log(error);
-          } else {
-            console.log(data);
-          }
-        },
-        (error) => {
-          console.log("exception...");
-          console.log(error);
-          $toast.error("Oh no, there was an error, please try again later or contact us via emai!");
-        }
-      );
+
+      let data_string = "Name: " + this.name;
+      data_string += ", Contact: " + this.email;
+      data_string += ", Subject: " + this.subject;
+      data_string += ", Message: " + this.message;
+      let url = "https://api.whatsapp.com/send?phone=19542882717&text=" + data_string;
+      window.open(url, "_blank");
+      $toast.success("Thank you for contacting us, we will contact you shortly!");
+      // $fetch("/api/contact_message/", {
+      //   method: "POST",
+      //   body: post_data,
+      // }).then(
+      //   (res) => {
+      //     $toast.success("Thank you for contacting us, we will contact you shortly!");
+      //     if (error) {
+      //       // dealing error
+      //       $toast.error("Oh no, there was an error, please try again later or contact us via emai!");
+      //       console.log(error);
+      //     } else {
+      //       console.log(data);
+      //     }
+      //   },
+      //   (error) => {
+      //     console.log("exception...");
+      //     console.log(error);
+      //     $toast.error("Oh no, there was an error, please try again later or contact us via emai!");
+      //   }
+      // );
     },
   },
 
