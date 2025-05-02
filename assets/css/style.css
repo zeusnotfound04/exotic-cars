@@ -12681,9 +12681,6 @@ h5,
 .car-wrap .text h2 {
   font-size: 20px;
   font-weight: 500;
-}
-
-.car-wrap .text h2 a {
   color: #000000;
 }
 
@@ -12724,11 +12721,11 @@ h5,
 }
 
 .car-details span.subheading {
-  font-size: 12px;
+  font-size: 20px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 2px;
-  color: rgba(0, 0, 0, 0.4);
+  color: white;
   display: block;
 }
 

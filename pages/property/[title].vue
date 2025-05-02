@@ -1,34 +1,9 @@
 <template>
-  <Head>
-    <Title>Houses</Title>
-    <Meta name="description" content="houses exotic cars" />
-  </Head>
-  <section
-    class="hero-wrap hero-wrap-2 js-fullheight"
-    data-stellar-background-ratio="0.5"
-    style="background-image: url('/img/background_house.jpg')"
-  >
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-        <div class="col-md-9 ftco-animate pb-5">
-          <p class="breadcrumbs">
-            <span class="mr-2"
-              ><a href="#">Home <i class="ion-ios-arrow-forward"></i></a
-            ></span>
-            <span>Houses <i class="ion-ios-arrow-forward"></i></span>
-          </p>
-          <h1 class="mb-3 bread">Choose your house</h1>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="ftco-section bg-light">
+    <div class="" style="margin-top: 2%"></div>
     <div class="container">
       <div class="row">
-        <div v-if="pending">Loading...</div>
-        <div class="col-md-6 col-lg-4" v-else v-for="(property, index) in properties" :key="index">
+        <div class="col-md-6 col-lg-6">
           <div class="car-wrap rounded ftco-animate">
             <div
               class="img rounded d-flex align-items-end"
@@ -52,16 +27,24 @@
                 <nuxt-link
                   :to="{path: '/custom_request', query: {vehicle: `${property.title} ${property.maker}`}}"
                   class="btn btn-primary py-2 mr-1"
-                  >Book Now</nuxt-link
                 >
-                <nuxt-link
-                  :to="`/property/${property.title.toLowerCase().replace(/\s+/g, '-')}`"
-                  class="btn btn-secondary py-2 ml-1"
-                  >Details</nuxt-link
-                >
+                  Book Now
+                </nuxt-link>
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <h2>Image Gallery</h2>
+      <div class="gallery">
+        <div v-for="(car, index) in property.gallery" :key="index">
+          <a :href="`https:${car.fields.file.url}`" target="_blank">
+            <img :src="`https:${car.fields.file.url}`" :alt="`${car.fields.title}`" />
+          </a>
         </div>
       </div>
     </div>
@@ -78,14 +61,17 @@ export default {
 };
 </script>
 <script setup>
-let properties = [];
-console.log("setup properties");
-// const {data, pending, error} = await useFetch("http://localhost:3001/api/get/properties/", {
-const {data, pending, error} = await useFetch("/api/get/properties/", {
+const route = useRoute();
+const title = route.params.title;
+
+let property = [];
+console.log("setup cars");
+// const {data, pending, error} = await useFetch("http://localhost:3001/api/get/property/" + title, {
+const {data, pending, error} = await useFetch("/api/get/property/" + title, {
   onResponse({request, response, options}) {
-    console.log(response);
-    properties = response._data.data;
-    console.log(properties);
+    console.log(response._data.data);
+    property = response._data.data;
+    console.log(property);
 
     const script = document.createElement("script");
     script.type = "text/javascript";
@@ -95,3 +81,20 @@ const {data, pending, error} = await useFetch("/api/get/properties/", {
 });
 // console.log(data);
 </script>
+<style lang="css" scoped>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns on desktop */
+  gap: 10px;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+}
+.car-details .img {
+  object-fit: cover;
+}
+</style>
