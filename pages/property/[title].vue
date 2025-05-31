@@ -42,9 +42,14 @@
       <h2>Image Gallery</h2>
       <div class="gallery">
         <div v-for="(car, index) in property.gallery" :key="index">
-          <a :href="`https:${car.fields.file.url}`" target="_blank">
-            <img :src="`https:${car.fields.file.url}`" :alt="`${car.fields.title}`" />
-          </a>
+          <img :src="`https:${car.fields.file.url}`" :alt="`${car.fields.title}`" @click="openModal(`https:${car.fields.file.url}`)" style="cursor:pointer;" />
+        </div>
+      </div>
+      <!-- Modal -->
+      <div v-if="showModal" class="modal-overlay" @click.self="closeModal">
+        <div class="modal-content">
+          <button class="modal-close" @click="closeModal">&times;</button>
+          <img :src="modalImage" style="max-width:100%;max-height:80vh;display:block;margin:auto;" />
         </div>
       </div>
     </div>
@@ -61,6 +66,7 @@ export default {
 };
 </script>
 <script setup>
+import { ref } from 'vue';
 const route = useRoute();
 const title = route.params.title;
 
@@ -80,6 +86,17 @@ const {data, pending, error} = await useFetch("/api/get/property/" + title, {
   },
 });
 // console.log(data);
+
+const showModal = ref(false);
+const modalImage = ref("");
+function openModal(url) {
+  modalImage.value = url;
+  showModal.value = true;
+}
+function closeModal() {
+  showModal.value = false;
+  modalImage.value = "";
+}
 </script>
 <style lang="css" scoped>
 .gallery {
@@ -96,5 +113,36 @@ const {data, pending, error} = await useFetch("/api/get/property/" + title, {
 }
 .car-details .img {
   object-fit: cover;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
 }
 </style>
