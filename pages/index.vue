@@ -51,9 +51,9 @@
                     <nuxt-link
                       :to="{path: 'custom_request', query: {vehicle: 'Benz g63'}}"
                       class="btn btn-primary py-2 mr-1"
-                      >Book Now</nuxt-link
                     >
-                    <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
+                      Book Now
+                    </nuxt-link>
                   </p>
                 </div>
               </div>
@@ -74,9 +74,9 @@
                     <nuxt-link
                       :to="{path: 'custom_request', query: {vehicle: 'Rolls Royce Cullinan'}}"
                       class="btn btn-primary py-2 mr-1"
-                      >Book Now</nuxt-link
                     >
-                    <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
+                      Book Now
+                    </nuxt-link>
                   </p>
                 </div>
               </div>
@@ -94,9 +94,9 @@
                     <nuxt-link
                       :to="{path: 'custom_request', query: {vehicle: 'Benz s580 Maybach'}}"
                       class="btn btn-primary py-2 mr-1"
-                      >Book Now</nuxt-link
                     >
-                    <!-- <a href="#" class="btn btn-secondary py-2 ml-1">Details</a> -->
+                      Book Now
+                    </nuxt-link>
                   </p>
                 </div>
               </div>
@@ -118,7 +118,6 @@
           <div class="heading-section heading-section-white pl-md-5">
             <span class="subheading">About us</span>
             <h2 class="mb-4">Welcome to MiamiExoticRents</h2>
-
             <p>
               Searching for unparalleled luxury car rental services in Miami? Discover Miami Exotic Rents, the city's
               premier destination for an extensive fleet of high-end vehicles. Our range includes everything from the
@@ -130,7 +129,6 @@
               rentals. Driven by a team of professional car enthusiasts, we ensure every car meets top-notch quality
               standards, offering you nothing but the best in luxury transportation.
             </p>
-
             <p>
               <nuxt-link class="btn btn-primary btn-lg" to="/exotic_cars">Look</nuxt-link>
             </p>
@@ -309,7 +307,10 @@
             </div>
             <div class="text w-100">
               <h3 class="heading mb-2">Exotic Car Rentals</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <p>
+                Choose from Miami's most exclusive fleet of exotic cars, each meticulously maintained for a premium
+                driving experience.
+              </p>
             </div>
           </div>
         </div>
@@ -521,7 +522,10 @@
             </div>
             <div class="text w-100">
               <h3 class="heading mb-2">Luxury Apartment/Home Rentals</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <p>
+                Enjoy luxury living in Miami's finest apartments and homes, offering comfort, style, and prime locations
+                for your stay.
+              </p>
             </div>
           </div>
         </div>
@@ -653,7 +657,10 @@
             </div>
             <div class="text w-100">
               <h3 class="heading mb-2">Yacht Rentals</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <p>
+                Set sail on a private yacht and explore Miami's beautiful coastline with our top-tier yacht rental
+                services.
+              </p>
             </div>
           </div>
         </div>
@@ -667,19 +674,21 @@
       <div class="row justify-content-end">
         <div class="col-md-6 heading-section heading-section-white ftco-animate">
           <h2 class="mb-3">#1 Source For Exotic Needs All Around South Florida.</h2>
-          <nuxt-link class="btn btn-primary btn-lg" to="/exotic_cars" @click="visible = !visible"
-            >Exotic Rents</nuxt-link
-          >
+          <nuxt-link class="btn btn-primary btn-lg" to="/exotic_cars" @click="visible = !visible">
+            Exotic Rents
+          </nuxt-link>
         </div>
       </div>
     </div>
   </section>
 </template>
+
 <style scoped>
 .ftco-degree-bg {
   background-image: url("/img/bg_1.jpg");
 }
 </style>
+
 <script>
 export default {
   created: function () {

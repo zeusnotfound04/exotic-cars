@@ -193,7 +193,10 @@
             </div>
             <div class="text w-100">
               <h3 class="heading mb-2">Exotic Car Rentals</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <p>
+                Experience the thrill of driving Miami's most luxurious and exotic cars. Our fleet features the latest
+                models, meticulously maintained for your comfort, style, and unforgettable adventures.
+              </p>
             </div>
           </div>
         </div>
@@ -405,7 +408,10 @@
             </div>
             <div class="text w-100">
               <h3 class="heading mb-2">Luxury Apartment/Home Rentals</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <p>
+                Stay in Miami's most exclusive apartments and homes. Enjoy premium amenities, stunning views, and the
+                perfect blend of comfort and sophistication for your next getaway or business trip.
+              </p>
             </div>
           </div>
         </div>
@@ -537,7 +543,10 @@
             </div>
             <div class="text w-100">
               <h3 class="heading mb-2">Yacht Rentals</h3>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <p>
+                Set sail on a private yacht and discover Miami from the water. Whether for a party, a romantic escape,
+                or a day of luxury, our yacht rentals offer an unmatched experience on the open sea.
+              </p>
             </div>
           </div>
         </div>

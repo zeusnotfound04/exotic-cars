@@ -46,7 +46,7 @@ export default defineNuxtConfig({
   },
   ssr: false,
 
-  modules: [// ...
+  modules: [
   // '@nuxtjs/pwa',
   '@nuxt/image',
   [
@@ -57,7 +57,8 @@ export default defineNuxtConfig({
         'defineStore',
       ],
     },
-  ], "@nuxtjs/seo"],
+  ], 
+  "@nuxtjs/seo"],
 // PWA module configuration: https://go.nuxtjs.dev/pwa
 // pwa: {
 //   // https://pwa.nuxtjs.org/manifest
@@ -120,6 +121,7 @@ export default defineNuxtConfig({
     trailingSlash: false,
   },
   seo: {
-    redirectToCanonicalSiteUrl: true
+    redirectToCanonicalSiteUrl: true,
+    canonicalQueryWhitelist: ['vehicle']
   }
 });
