@@ -107,7 +107,7 @@ export default {
         <nuxt-link to="/" class="d-inline-flex link-body-emphasis text-decoration-none">
           <div style="width: 150px; height: 68px; position: relative; left: 34px; top: 0px">
             <div style="left: -7px; top: 0px; position: absolute; text-align: center">
-              <img src="/img/logo.png" alt="home" height="70px" width="83" />
+              <img src="https://miamiexotics.b-cdn.net/img/logo.png" alt="home" height="70px" width="83" />
             </div>
           </div>
         </nuxt-link>

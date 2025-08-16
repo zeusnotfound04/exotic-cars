@@ -6,7 +6,7 @@
           <div class="ftco-footer-widget mb-4">
             <h2 class="ftco-heading-2">
               <a class="navbar-brand" href="#">
-                <img src="/img/logo.png" height="68px" width="83px" alt="home" />
+                <img src="https://miamiexotics.b-cdn.net/img/logo.png" height="68px" width="83px" alt="home" />
               </a>
             </h2>
             <p></p>

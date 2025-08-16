@@ -14,9 +14,9 @@
               }"
             ></div>
             <div class="text">
-              <h2 class="mb-0">
+              <h1 class="mb-0">
                 <span>{{ property.title }}</span>
-              </h2>
+              </h1>
               <div class="d-flex mb-3 mb-3 flex-column">
                 <p class="price">${{ property.dailyPrice }} <span>Daily</span></p>
                 <div v-for="(feature, index) in property.features" :key="index">
@@ -42,14 +42,19 @@
       <h2>Image Gallery</h2>
       <div class="gallery">
         <div v-for="(car, index) in property.gallery" :key="index">
-          <img :src="`https:${car.fields.file.url}`" :alt="`${car.fields.title}`" @click="openModal(`https:${car.fields.file.url}`)" style="cursor:pointer;" />
+          <img
+            :src="`https:${car.fields.file.url}`"
+            :alt="`${car.fields.title}`"
+            @click="openModal(`https:${car.fields.file.url}`)"
+            style="cursor: pointer"
+          />
         </div>
       </div>
       <!-- Modal -->
       <div v-if="showModal" class="modal-overlay" @click.self="closeModal">
         <div class="modal-content">
           <button class="modal-close" @click="closeModal">&times;</button>
-          <img :src="modalImage" style="max-width:100%;max-height:80vh;display:block;margin:auto;" />
+          <img :src="modalImage" style="max-width: 100%; max-height: 80vh; display: block; margin: auto" />
         </div>
       </div>
     </div>
@@ -60,28 +65,40 @@ export default {
   created: function () {
     // const script = document.createElement("script");
     // script.type = "text/javascript";
-    // script.src = "/js/main.js";
+    // script.src = "https://miamiexotics.b-cdn.net/js/main.js";
     // document.body.appendChild(script);
   },
 };
 </script>
 <script setup>
-import { ref } from 'vue';
+import {ref} from "vue";
+import {useRoute, useHead} from "#imports";
+
 const route = useRoute();
 const title = route.params.title;
+
+// Add canonical link for SEO
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: "https://miamiexoticrents.com/property/" + title + "/",
+    },
+  ],
+});
 
 let property = [];
 console.log("setup cars");
 // const {data, pending, error} = await useFetch("http://localhost:3001/api/get/property/" + title, {
 const {data, pending, error} = await useFetch("/api/get/property/" + title, {
   onResponse({request, response, options}) {
-    console.log(response._data.data);
+    // console.log(response._data.data);
     property = response._data.data;
-    console.log(property);
+    // console.log(property);
 
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "/js/main.js";
+    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
     document.body.appendChild(script);
   },
 });
@@ -99,6 +116,15 @@ function closeModal() {
 }
 </script>
 <style lang="css" scoped>
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  /* text-align: center; */
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
+}
 .gallery {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 columns on desktop */
@@ -120,7 +146,7 @@ function closeModal() {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +159,7 @@ function closeModal() {
   border-radius: 8px;
   max-width: 90vw;
   max-height: 90vh;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 .modal-close {
   position: absolute;

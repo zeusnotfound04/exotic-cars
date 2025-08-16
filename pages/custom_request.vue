@@ -5,7 +5,7 @@
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
-    style="background-image: url('/img/bg_3.jpg')"
+    style="background-image: url(https://miamiexotics.b-cdn.net/img/bg_3.jpg)"
     data-stellar-background-ratio="0.5"
   >
     <div class="overlay"></div>
@@ -75,6 +75,34 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import {useRoute, useHead} from "#imports";
+
+const route = useRoute();
+
+// Build canonical URL with query parameters
+const canonicalUrl = computed(() => {
+  const baseUrl = "https://miamiexoticrents.com" + route.path;
+  const queryString = Object.keys(route.query).length ? "?" + new URLSearchParams(route.query).toString() : "";
+  return baseUrl + queryString;
+});
+
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href: canonicalUrl.value,
+    },
+  ],
+  meta: [
+    {
+      property: "og:image",
+      content: "https://miamiexotics.b-cdn.net/img/logo.png",
+    },
+  ],
+});
+</script>
 
 <script>
 const {$toast} = useNuxtApp();
@@ -157,7 +185,7 @@ export default {
   created: function () {
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "/js/main.js";
+    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
     document.body.appendChild(script);
     $(function () {
       const currentDate = new Date();

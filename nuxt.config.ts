@@ -16,6 +16,7 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+        { hid: 'og-image', property: 'og:image', content: 'https://miamiexotics.b-cdn.net/img/logo.png' },
         { name:"theme-color", content:"#ffffff"},
         { name:"google-site-verification", content:"Lq5PH6TMBO64FVZHKEcbyADxPr68BMyOTQFaA7HZKiU"}
       ],
@@ -27,20 +28,20 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', type: "text/css", href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' }
       ],
       script: [
-        {tagPosition: 'bodyClose',src:"/js/jquery.min.js"},
-        {tagPosition: 'bodyClose',src:"/js/jquery-migrate-3.0.1.min.js", defer:true},
-        {tagPosition: 'bodyClose',src:"/js/popper.min.js"},
-        {tagPosition: 'bodyClose',src:"/js/bootstrap.min.js", defer:true},
-        {tagPosition: 'bodyClose',src:"/js/jquery.easing.1.3.js"},
-        {tagPosition: 'bodyClose',src:"/js/jquery.waypoints.min.js"},
-        {tagPosition: 'bodyClose',src:"/js/jquery.stellar.min.js", defer:true},
-        {tagPosition: 'bodyClose',src:"/js/owl.carousel.min.js", defer:true},
-        {tagPosition: 'bodyClose',src:"/js/jquery.magnific-popup.min.js"},
-        {tagPosition: 'bodyClose',src:"/js/aos.js", defer:true},
-        {tagPosition: 'bodyClose',src:"/js/jquery.animateNumber.min.js"},
-        {tagPosition: 'bodyClose',src:"/js/bootstrap-datepicker.js", defer:true},
-        {tagPosition: 'bodyClose',src:"/js/jquery.timepicker.min.js", defer:true},
-        {tagPosition: 'bodyClose',src:"/js/scrollax.min.js", defer:true},
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/jquery.min.js" },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/jquery-migrate-3.0.1.min.js", defer: true },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/popper.min.js" },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/bootstrap.min.js", defer: true },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/jquery.easing.1.3.js" },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/jquery.waypoints.min.js" },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/jquery.stellar.min.js", defer: true },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/owl.carousel.min.js", defer: true },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/jquery.magnific-popup.min.js" },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/aos.js", defer: true },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/jquery.animateNumber.min.js" },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/bootstrap-datepicker.js", defer: true },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/jquery.timepicker.min.js", defer: true },
+        { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/scrollax.min.js", defer: true },
       ],
     },
   },
@@ -48,45 +49,45 @@ export default defineNuxtConfig({
 
   modules: [
   // '@nuxtjs/pwa',
-  '@nuxt/image',
-  [
-    '@pinia/nuxt',
-    {
-      autoImports: [
+    '@nuxt/image',
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: [
         // automatically imports `defineStore`
-        'defineStore',
-      ],
-    },
-  ], 
+          'defineStore',
+        ],
+      },
+    ],
   "@nuxtjs/seo"],
-// PWA module configuration: https://go.nuxtjs.dev/pwa
-// pwa: {
-//   // https://pwa.nuxtjs.org/manifest
-//   // Manifest adds Web App Manifest with no pain.
-//   manifest: {
-//     name: "SportsWire",
-//     short_name: "SportsWire",
-//     description: "Up-to-date Sports News and Analysis App.",
-//     theme_color: "#6a5acd",
-//     lang: "en",
-//     background_color: "#6a5acd",
-//   },
-//   // https://pwa.nuxtjs.org/icon
-//   icon: {
-//     sizes: [64, 120, 144, 152, 192, 384, 512], //Array of sizes to be generated (Square).These are the default values
-//   },
-//   // https://pwa.nuxtjs.org/meta
-//   // Meta easily adds common meta tags into your project with zero-config needed. 
-//   meta: {
-//     name: "SportsWire",
-//     description: "Up-to-date Sports News and Analysis App.",
-//     author: "Vino Samari",
-//     theme_color: "#6a5acd",
-//     nativeUi: true,
-//     appleStatusBarStyle: "black",
-//     mobileAppIOS: true,
-//   },
-// },
+  // PWA module configuration: https://go.nuxtjs.dev/pwa
+  // pwa: {
+  //   // https://pwa.nuxtjs.org/manifest
+  //   // Manifest adds Web App Manifest with no pain.
+  //   manifest: {
+  //     name: "SportsWire",
+  //     short_name: "SportsWire",
+  //     description: "Up-to-date Sports News and Analysis App.",
+  //     theme_color: "#6a5acd",
+  //     lang: "en",
+  //     background_color: "#6a5acd",
+  //   },
+  //   // https://pwa.nuxtjs.org/icon
+  //   icon: {
+  //     sizes: [64, 120, 144, 152, 192, 384, 512], //Array of sizes to be generated (Square).These are the default values
+  //   },
+  //   // https://pwa.nuxtjs.org/meta
+  //   // Meta easily adds common meta tags into your project with zero-config needed. 
+  //   meta: {
+  //     name: "SportsWire",
+  //     description: "Up-to-date Sports News and Analysis App.",
+  //     author: "Vino Samari",
+  //     theme_color: "#6a5acd",
+  //     nativeUi: true,
+  //     appleStatusBarStyle: "black",
+  //     mobileAppIOS: true,
+  //   },
+  // },
   // axios: {
   //   // proxy: true
   // },
@@ -116,8 +117,8 @@ export default defineNuxtConfig({
   site: {
     url: 'https://miamiexoticrents.com',
     name: 'Miami Exotic Rents',
-    description: 'Welcome to my awesome site!',
-    defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
+    description: 'Miami Exotic Rents provides luxury car, yacht, and property rentals in Miami. Enjoy premium vehicles, stunning yachts, and exclusive homes with seamless booking.',
+    defaultLocale: 'en',
     trailingSlash: false,
   },
   seo: {

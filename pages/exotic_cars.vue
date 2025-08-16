@@ -5,7 +5,7 @@
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
-    style="background-image: url('/img/bg_3.jpg')"
+    style="background-image: url(https://miamiexotics.b-cdn.net/img/bg_3.jpg)"
     data-stellar-background-ratio="0.5"
   >
     <div class="overlay"></div>
@@ -70,7 +70,7 @@ export default {
   created: function () {
     // const script = document.createElement("script");
     // script.type = "text/javascript";
-    // script.src = "/js/main.js";
+    // script.src = "https://miamiexotics.b-cdn.net/js/main.js";
     // document.body.appendChild(script);
   },
 };
@@ -81,13 +81,13 @@ console.log("setup cars");
 // const {data, pending, error} = await useFetch("http://localhost:3001/api/get/cars/", {
 const {data, pending, error} = await useFetch("/api/get/cars/", {
   onResponse({request, response, options}) {
-    console.log(response);
+    // console.log(response);
     cars = response._data.data;
-    console.log(cars);
+    // console.log(cars);
 
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "/js/main.js";
+    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
     document.body.appendChild(script);
   },
 });
