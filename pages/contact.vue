@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>Contact Us</Title>
-    <Meta name="description" content="contact us miami exotic rents" />
+    <Meta name="description" content="Contact Miami Exotic Rents for luxury car, yacht, and property rentals in Miami. Reach out for inquiries, bookings, or support—our team is ready to assist you." />
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"

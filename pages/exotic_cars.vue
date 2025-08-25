@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>Exotic Cars</Title>
-    <Meta name="description" content="exotic cars" />
+    <Meta name="description" content="Explore Miami's finest selection of exotic cars for rent. Choose from luxury brands and enjoy premium vehicles, top service, and seamless booking with Miami Exotic Rents." />
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"

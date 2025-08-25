@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>Houses</Title>
-    <Meta name="description" content="houses exotic cars" />
+    <Meta name="description" content="Browse luxury houses for rent in Miami. Discover exclusive properties with premium amenities and enjoy a seamless booking experience with Miami Exotic Rents." />
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"

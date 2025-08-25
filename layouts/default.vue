@@ -24,7 +24,9 @@ useHead(() => ({
   link: [
     {
       rel: "canonical",
-      href: "https://miamiexoticrents.com" + route.path + "/",
+      href:
+        "https://miamiexoticrents.com" +
+        (route.path.endsWith("/") ? route.path : route.path + "/"),
     },
   ],
 }));

@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>Security Deposits</Title>
-    <Meta name="description" content="security deposits exotic cars" />
+    <Meta name="description" content="Learn about our security deposit policy for luxury car rentals in Miami. Find out how deposits work and how we ensure a worry-free rental experience." />
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"

@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>About</Title>
-    <Meta name="description" content="abnout miami exotic rents" />
+    <Meta name="description" content="Learn more about Miami Exotic Rents, your trusted provider for luxury car, yacht, and property rentals in Miami. Discover our premium services and commitment to excellence." />
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
@@ -108,7 +108,7 @@
             </div>
             <div class="item">
               <div class="testimony-wrap rounded text-center py-4 pb-5">
-                <div class="user-img mb-2" style="background-image: url(img/person_3.jpg)"></div>
+                <div class="user-img mb-2" style="background-image: url(img/person_3.jpg')"></div>
                 <div class="text pt-4">
                   <p class="mb-4">
                     Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live

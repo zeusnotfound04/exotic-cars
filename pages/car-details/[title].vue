@@ -69,18 +69,38 @@ export default {
 };
 </script>
 <script setup>
-import {ref, computed} from "vue";
-import {useRoute, useHead} from "#imports"; // Import useHead from Nuxt
+import { ref, computed } from "vue";
+import { useRoute, useHead } from "#imports";
 
 const route = useRoute();
 const title = route.params.title;
 
-// Add canonical link for SEO
+// Dynamic meta description using the car title
+const metaDescription = computed(() =>
+  `Rent the ${title} and other luxury cars in Miami. Enjoy premium vehicles, top service, and seamless booking with Miami Exotic Rents.`
+);
+
+// Always ensure trailing slash on canonical URL
+const canonicalUrl = computed(() => {
+  const baseUrl = "https://miamiexoticrents.com/car-details/" + title;
+  return baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
+});
+
 useHead({
   link: [
     {
       rel: "canonical",
-      href: "https://miamiexoticrents.com/car-details/" + title + '/',
+      href: canonicalUrl.value,
+    },
+  ],
+  meta: [
+    {
+      name: "description",
+      content: metaDescription.value,
+    },
+    {
+      property: "og:image",
+      content: "https://miamiexotics.b-cdn.net/img/logo.png",
     },
   ],
 });

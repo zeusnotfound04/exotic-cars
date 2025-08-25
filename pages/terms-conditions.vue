@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>Terms and Conditions</Title>
-    <Meta name="description" content="terms and conditions exotic cars" />
+    <Meta name="description" content="Read the terms and conditions for Miami Exotic Rents. Learn about our policies, user obligations, payments, privacy, and legal information for luxury rentals in Miami." />
   </Head>
   <div>
     <section class="hero-wrap hero-wrap-2">

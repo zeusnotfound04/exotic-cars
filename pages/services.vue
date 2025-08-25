@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>Services</Title>
-    <Meta name="description" content="services exotic cars" />
+    <Meta name="description" content="Discover our full range of luxury rental services in Miami, including exotic cars, yachts, and exclusive properties. Enjoy premium experiences and personalized service." />
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"

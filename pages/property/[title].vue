@@ -71,18 +71,38 @@ export default {
 };
 </script>
 <script setup>
-import {ref} from "vue";
-import {useRoute, useHead} from "#imports";
+import { ref, computed } from "vue";
+import { useRoute, useHead } from "#imports";
 
 const route = useRoute();
 const title = route.params.title;
 
-// Add canonical link for SEO
+// Dynamic meta description using the property title
+const metaDescription = computed(() =>
+  `Rent ${title} and other exclusive properties in Miami. Enjoy luxury homes, premium amenities, and seamless booking with Miami Exotic Rents.`
+);
+
+// Always ensure trailing slash on canonical URL
+const canonicalUrl = computed(() => {
+  const baseUrl = "https://miamiexoticrents.com/property/" + title;
+  return baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
+});
+
 useHead({
   link: [
     {
       rel: "canonical",
-      href: "https://miamiexoticrents.com/property/" + title + "/",
+      href: canonicalUrl.value,
+    },
+  ],
+  meta: [
+    {
+      name: "description",
+      content: metaDescription.value,
+    },
+    {
+      property: "og:image",
+      content: "https://miamiexotics.b-cdn.net/img/logo.png",
     },
   ],
 });

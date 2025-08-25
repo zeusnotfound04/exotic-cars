@@ -70,18 +70,38 @@ export default {
 };
 </script>
 <script setup>
-import {ref} from "vue";
-import {useRoute, useHead} from "#imports";
+import { ref, computed } from "vue";
+import { useRoute, useHead } from "#imports";
 
 const route = useRoute();
 const title = route.params.title;
 
-// Add canonical link for SEO
+// Dynamic meta description using the yacht title
+const metaDescription = computed(() =>
+  `Charter the ${title} yacht and other luxury vessels in Miami. Enjoy premium yachts, top service, and seamless booking with Miami Exotic Rents.`
+);
+
+// Always ensure trailing slash on canonical URL
+const canonicalUrl = computed(() => {
+  const baseUrl = "https://miamiexoticrents.com/yacht/" + title;
+  return baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
+});
+
 useHead({
   link: [
     {
       rel: "canonical",
-      href: "https://miamiexoticrents.com/yacht/" + title + "/",
+      href: canonicalUrl.value,
+    },
+  ],
+  meta: [
+    {
+      name: "description",
+      content: metaDescription.value,
+    },
+    {
+      property: "og:image",
+      content: "https://miamiexotics.b-cdn.net/img/logo.png",
     },
   ],
 });

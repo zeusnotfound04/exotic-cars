@@ -77,13 +77,14 @@
 </template>
 
 <script setup>
-import {useRoute, useHead} from "#imports";
+import { useRoute, useHead } from "#imports";
+import { computed } from "vue";
 
 const route = useRoute();
 
-// Build canonical URL with query parameters
+// Always ensure trailing slash on canonical URL
 const canonicalUrl = computed(() => {
-  const baseUrl = "https://miamiexoticrents.com" + route.path;
+  const baseUrl = "https://miamiexoticrents.com" + (route.path.endsWith("/") ? route.path : route.path + "/");
   const queryString = Object.keys(route.query).length ? "?" + new URLSearchParams(route.query).toString() : "";
   return baseUrl + queryString;
 });
@@ -96,6 +97,10 @@ useHead({
     },
   ],
   meta: [
+    {
+      name: "description",
+      content: "Submit a custom booking request for luxury cars, yachts, or properties in Miami. Our team will help you find the perfect rental for your needs.",
+    },
     {
       property: "og:image",
       content: "https://miamiexotics.b-cdn.net/img/logo.png",

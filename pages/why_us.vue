@@ -3,8 +3,7 @@
     <Title>Why us?</Title>
     <Meta
       name="description"
-      content="Most Reliable Service At MiamiExoticRents, reliability is our top priority. We ensure that every vehicle in
-          our fleet is meticulously maintained and ready for your adventure."
+      content="Find out why MiamiExoticRents is the leading choice for luxury car rentals in Miami. Enjoy a premium fleet, outstanding service, safety, and a seamless rental experience."
     />
   </Head>
   <div>

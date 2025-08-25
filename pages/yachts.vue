@@ -1,7 +1,7 @@
 <template>
   <Head>
     <Title>Yachts</Title>
-    <Meta name="description" content="yachts exotic cars" />
+    <Meta name="description" content="Browse Miami's best selection of luxury yachts for rent. Enjoy premium vessels, expert service, and seamless booking with Miami Exotic Rents." />
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
