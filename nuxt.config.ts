@@ -22,10 +22,11 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap' },
+        { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap' },
         { rel:"manifest", href:"/site.webmanifest"},
         { rel:"mask-icon", href:"safari-pinned-tab.svg", color:"#5bbad5"},
-        { rel: 'stylesheet', type: "text/css", href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' }
+        { rel: 'stylesheet', type: "text/css", href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' },
+        { rel: 'stylesheet', type: "text/css", href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' }
       ],
       script: [
         { tagPosition: 'bodyClose', src: "https://miamiexotics.b-cdn.net/js/jquery.min.js" },
@@ -117,7 +118,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://miamiexoticrents.com',
     name: 'Miami Exotic Rents',
-    description: 'Miami Exotic Rents provides luxury car, yacht, and property rentals in Miami. Enjoy premium vehicles, stunning yachts, and exclusive homes with seamless booking.',
+    description: 'Luxury car, yacht & property rentals in Miami. Drive premium vehicles, sail stunning yachts, and stay in exclusive homes. Book your Miami experience today.',
     defaultLocale: 'en',
     trailingSlash: false,
   },

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import "../assets/css/style.css";
+import "../assets/css/theme.css";
 
 import "../assets/css/open-iconic-bootstrap.min.css";
 import "../assets/css/animate.css";
@@ -15,11 +16,7 @@ import "../assets/css/ionicons.min.css";
 import "../assets/css/bootstrap-datepicker3.min.css";
 import "../assets/css/jquery.timepicker.css";
 
-// import "../assets/css/flaticon.css";
 import "../assets/css/icomoon.css";
-
-// import "../assets/css/theme.css";
-// import "../assets/fonts/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css";
 </script>
 <script lang="ts">
 export default {
@@ -102,18 +99,22 @@ export default {
   />
 
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-      <div class="navbar-brand">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- <div class="navbar-brand">
         <nuxt-link to="/" class="d-inline-flex link-body-emphasis text-decoration-none">
           <div style="width: 150px; height: 68px; position: relative; left: 34px; top: 0px">
             <div style="left: -7px; top: 0px; position: absolute; text-align: center">
               <img src="https://miamiexotics.b-cdn.net/img/logo.png" alt="home" height="70px" width="83" />
+              <span class="logo-text">
+                <span class="text-gold">MiamiExotic </span>
+                <span class="text-white">Rents</span>
+              </span>
             </div>
           </div>
         </nuxt-link>
-      </div>
+      </div> -->
       <button
-        class="navbar-toggler"
+        class="navbar-toggler ms-auto"
         type="button"
         data-toggle="collapse"
         data-target="#ftco-nav"
@@ -125,15 +126,10 @@ export default {
       </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto nav-menu">
           <li class="nav-item active">
             <nuxt-link class="nav-link menu-link" to="/" @click="visible = !visible">Home</nuxt-link>
           </li>
-          <!-- <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/instant_booking" @click="visible = !visible"
-              >Instant Booking</nuxt-link
-            >
-          </li> -->
           <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/exotic_cars">Exotic Cars</nuxt-link>
           </li>
@@ -148,12 +144,6 @@ export default {
               >Security Deposits</nuxt-link
             >
           </li>
-          <!-- <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/services" @click="visible = !visible">Services</nuxt-link>
-          </li> -->
-          <!-- <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/blog" @click="visible = !visible">Blog</nuxt-link>
-          </li> -->
           <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/contact" @click="visible = !visible">Contact</nuxt-link>
           </li>
@@ -168,3 +158,10 @@ export default {
   </nav>
   <!-- END nav -->
 </template>
+
+<style scoped>
+/* Ensure toggler is right-aligned on all screens */
+.navbar .navbar-toggler {
+  margin-left: auto;
+}
+</style>
