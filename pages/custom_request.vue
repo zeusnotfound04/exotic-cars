@@ -77,8 +77,8 @@
 </template>
 
 <script setup>
-import { useRoute, useHead } from "#imports";
-import { computed } from "vue";
+import {useRoute, useHead} from "#imports";
+import {computed} from "vue";
 
 const route = useRoute();
 
@@ -99,7 +99,8 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "Submit a custom booking request for luxury cars, yachts, or properties in Miami. Our team will help you find the perfect rental for your needs.",
+      content:
+        "Submit a custom booking request for luxury cars, yachts, or properties in Miami. Our team will help you find the perfect rental for your needs.",
     },
     {
       property: "og:image",

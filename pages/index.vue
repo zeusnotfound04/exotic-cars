@@ -51,7 +51,7 @@
       </div>
 
       <!-- Search Bar -->
-      <div class="search-container">
+      <!-- <div class="search-container">
         <div class="search-grid">
           <div class="search-item">
             <svg class="search-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -89,7 +89,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <!-- Scroll Indicator -->

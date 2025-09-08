@@ -20,7 +20,7 @@
     </div>
 
     <!-- Yacht Controls -->
-    <div class="yacht-controls">
+    <!-- <div class="yacht-controls">
       <div class="container">
         <div class="controls-container">
           <div class="filter-group">
@@ -48,7 +48,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Yacht Cards Grid (ftco-section merged) -->
     <section class="ftco-section bg-light">
@@ -63,13 +63,14 @@
                   :alt="yacht.title || yacht.name"
                   loading="lazy"
                 />
-                <div class="car-badge">{{ yacht.category }}</div>
+                <div class="car-badge">{{ yacht.category || "Luxury" }}</div>
                 <div class="car-price">${{ yacht.cost4Hours }}/4 hours</div>
               </div>
               <div class="car-details">
                 <h3 class="car-name">{{ yacht.title || yacht.name }}</h3>
                 <div class="">${{ yacht.cost6Hours }}/6 hours</div>
                 <div class="">${{ yacht.cost8Hours }}/8 hours</div>
+                <br />
                 <div class="car-specs" v-if="yacht.specs">
                   <div class="spec-item">
                     <div class="spec-label">
@@ -106,10 +107,15 @@
                   </div>
                 </div>
                 <nuxt-link
+                  :to="{path: '/custom_request', query: {vehicle: `${yacht.title}`}}"
+                  class="btn btn-outline py-2 mr-1"
+                  >Charter Now
+                </nuxt-link>
+                <nuxt-link
                   :to="`/yacht/${yacht.title ? yacht.title.toLowerCase().replace(/\s+/g, '-') : ''}`"
-                  class="btn btn-outline"
+                  class="btn btn-outline py-2 mr-1"
                 >
-                  Charter Now
+                  Details
                   <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
                   </svg>

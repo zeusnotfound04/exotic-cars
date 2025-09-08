@@ -6,14 +6,16 @@
       content="Browse luxury houses for rent in Miami. Discover exclusive properties with premium amenities and enjoy a seamless booking experience with Miami Exotic Rents."
     />
   </Head>
-  <section class="properties-hero">
-    <div class="properties-overlay"></div>
-    <div class="properties-content">
-      <h1 class="properties-title">
-        <span class="text-white">Luxury</span>
-        <span class="text-gold">Properties</span>
-      </h1>
-      <p class="properties-subtitle">Discover Miami's most exclusive luxury accommodations</p>
+  <section class="properties-section">
+    <div class="properties-hero">
+      <div class="properties-overlay"></div>
+      <div class="properties-content">
+        <h1 class="properties-title">
+          <span class="text-white">Luxury</span>
+          <span class="text-gold">Properties</span>
+        </h1>
+        <p class="properties-subtitle">Discover Miami's most exclusive luxury accommodations</p>
+      </div>
     </div>
   </section>
 
@@ -68,7 +70,7 @@
                 </div>
               </div>
               <nuxt-link
-                :to="{path: '/custom_request', query: {vehicle: `${property.title} ${property.maker}`}}"
+                :to="{path: '/custom_request', query: {vehicle: `${property.title}`}}"
                 class="btn py-2 mr-1 btn-outline"
               >
                 Book Now

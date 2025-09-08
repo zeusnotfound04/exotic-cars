@@ -1,41 +1,74 @@
 <template>
   <section class="ftco-section bg-light">
-    <div class="" style="margin-top: 2%"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-6">
-          <div class="car-wrap rounded ftco-animate">
-            <div
-              class="img rounded d-flex align-items-end"
-              :style="{
-                backgroundImage: `url(https:${yacht_data.frontImage.fields.file.url})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }"
-            ></div>
-            <div class="text">
-              <h1 style="color: black" class="mb-0">
-                <span>{{ yacht_data.title }}</span>
-              </h1>
-              <div class="d-flex mb-3 mb-3 flex-column">
-                <p class="price">${{ yacht_data.cost4Hours }} <span>4 hours</span></p>
-                <p class="price">${{ yacht_data.cost6Hours }} <span>6 hours</span></p>
-                <p class="price">${{ yacht_data.cost8Hours }} <span>8 hours</span></p>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-7">
+          <div class="car-card" data-aos="fade-up" :data-aos-delay="yacht_data.id ? yacht_data.id * 100 : 0">
+            <div class="car-image">
+              <img
+                :src="`https:${yacht_data.frontImage?.fields?.file?.url || yacht_data.image}`"
+                :alt="yacht_data.title || yacht_data.name"
+                loading="lazy"
+              />
+              <div class="car-badge">{{ yacht_data.category || "Luxury" }}</div>
+              <div class="car-price">${{ yacht_data.cost4Hours }}/hour</div>
+            </div>
+            <div class="car-details">
+              <h3 class="car-name">{{ yacht_data.title || yacht_data.name }}</h3>
+              <div class="">${{ yacht_data.cost6Hours }}/6 hours</div>
+              <div class="">${{ yacht_data.cost8Hours }}/8 hours</div>
+              <br />
+              <div class="car-specs" v-if="yacht_data.specs">
+                <div class="spec-item">
+                  <div class="spec-label">
+                    <svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                    Length
+                  </div>
+                  <span class="spec-value">{{ yacht_data.specs.length }}</span>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">
+                    <svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01 1l-2.83 3.83C10.5 13.5 9.5 14 8.5 14H7v2h1.5c1.54 0 2.96-.71 3.93-1.93L13.5 12.5c.2-.27.52-.5.85-.5h2.65L19 18h1z"
+                      />
+                    </svg>
+                    Passengers
+                  </div>
+                  <span class="spec-value">{{ yacht_data.specs.passengers }}</span>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-label">
+                    <svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                      />
+                    </svg>
+                    Crew
+                  </div>
+                  <span class="spec-value">{{ yacht_data.specs.crew }}</span>
+                </div>
               </div>
-              <p class="d-flex mb-0 d-block">
-                <nuxt-link
-                  :to="{path: '/custom_request', query: {vehicle: `${yacht_data.title}`}}"
-                  class="btn btn-primary py-2 mr-1"
-                >
-                  Book Now
-                </nuxt-link>
-              </p>
+              <nuxt-link
+                :to="{path: '/custom_request', query: {vehicle: `${yacht_data.title}`}}"
+                class="btn btn-outline"
+              >
+                Charter Now
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                </svg>
+              </nuxt-link>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- Gallery and modal code remains unchanged -->
   <section>
     <div class="container">
       <h2>Image Gallery</h2>
@@ -70,15 +103,16 @@ export default {
 };
 </script>
 <script setup>
-import { ref, computed } from "vue";
-import { useRoute, useHead } from "#imports";
+import {ref, computed} from "vue";
+import {useRoute, useHead} from "#imports";
 
 const route = useRoute();
 const title = route.params.title;
 
 // Dynamic meta description using the yacht title
-const metaDescription = computed(() =>
-  `Charter the ${title} yacht and other luxury vessels in Miami. Enjoy premium yachts, top service, and seamless booking with Miami Exotic Rents.`
+const metaDescription = computed(
+  () =>
+    `Charter the ${title} yacht and other luxury vessels in Miami. Enjoy premium yachts, top service, and seamless booking with Miami Exotic Rents.`
 );
 
 // Always ensure trailing slash on canonical URL
@@ -180,5 +214,91 @@ function closeModal() {
   font-size: 2rem;
   cursor: pointer;
   color: #333;
+}
+/* .car-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.car-card:hover {
+  transform: translateY(-4px);
+}
+.car-image {
+  position: relative;
+} */
+/* .car-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+}
+.car-price {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #007bff;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+} */
+.car-details {
+  padding: 15px;
+}
+.car-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+.car-specs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.spec-item {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+.spec-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #666;
+  margin-right: 5px;
+}
+.spec-value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #333;
+}
+/* .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 2px solid #007bff;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #007bff;
+  background: transparent;
+  transition: background 0.3s, color 0.3s;
+}
+.btn-outline:hover {
+  background: #007bff;
+  color: #fff;
+} */
+.btn-icon {
+  width: 1.2em;
+  height: 1.2em;
+  margin-left: 0.5em;
+  fill: currentColor;
 }
 </style>

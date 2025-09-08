@@ -145,12 +145,7 @@ export default {
             >
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/contact" @click="visible = !visible">Contact</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/custom_request" @click="visible = !visible"
-              >Custom Request</nuxt-link
-            >
+            <a class="nav-link menu-link" href="tel:19542882717" style="font-weight: 600"> +1-954-288-2717 </a>
           </li>
         </ul>
       </div>
