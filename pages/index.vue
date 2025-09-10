@@ -42,7 +42,7 @@
           </svg>
           Charter a Yacht
         </a>
-        <a href="/properties" class="btn btn-outline">
+        <a href="/houses" class="btn btn-outline">
           <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M3 21L12 12L21 21V3C21 2.4 20.6 2 20 2H4C3.4 2 3 2.4 3 3V21Z" />
           </svg>

@@ -6,22 +6,20 @@
       content="Contact Miami Exotic Rents for luxury car, yacht, and property rentals in Miami. Reach out for inquiries, bookings, or support—our team is ready to assist you."
     />
   </Head>
-  <section
-    class="hero-wrap hero-wrap-2 js-fullheight"
-    style="background-image: url(https://miamiexotics.b-cdn.net/img/bg_3.jpg)"
-    data-stellar-background-ratio="0.5"
-  >
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-        <div class="col-md-9 ftco-animate pb-5">
-          <p class="breadcrumbs">
-            <span class="mr-2"
-              ><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a
-            ></span>
-            <span>Contact <i class="ion-ios-arrow-forward"></i></span>
+  <!-- Modern Contact Hero -->
+  <section class="contact-hero">
+    <div class="contact-hero-bg"></div>
+    <div class="container contact-hero-content">
+      <div class="row align-items-center">
+        <div class="col-12 text-center">
+          <h1 class="contact-hero-title">
+            <span class="text-white">Contact &nbsp;</span>
+            <span class="text-gold">Us</span>
+          </h1>
+          <p class="contact-hero-subtitle">
+            We're here to help with your luxury rental experience.<br />
+            Reach out for bookings, questions, or support—our team will respond promptly.
           </p>
-          <h1 class="mb-3 bread">Contact Us</h1>
         </div>
       </div>
     </div>
@@ -176,3 +174,58 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.contact-hero {
+  position: relative;
+  min-height: 320px;
+  background: linear-gradient(120deg, #181818 60%, #ffd700 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 80px;
+}
+.contact-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("https://miamiexotics.b-cdn.net/img/bg_3.jpg") center center/cover no-repeat;
+  opacity: 0.28;
+  z-index: 1;
+}
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.contact-hero-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 12px #0008;
+}
+.text-gold {
+  color: #ffd700;
+}
+.contact-hero-subtitle {
+  font-size: 1.2rem;
+  color: #fff;
+  max-width: 540px;
+  margin: 0 auto;
+  text-shadow: 0 1px 8px #0007;
+}
+@media (max-width: 600px) {
+  .contact-hero-title {
+    font-size: 1.5rem;
+  }
+  .contact-hero-content {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .contact-hero-subtitle {
+    font-size: 1rem;
+  }
+}
+</style>

@@ -144,12 +144,20 @@ export default {
               >Security Deposits</nuxt-link
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item d-none d-lg-block">
             <a class="nav-link menu-link" href="tel:19542882717" style="font-weight: 600"> +1-954-288-2717 </a>
           </li>
         </ul>
       </div>
     </div>
+    <!-- Always show phone on mobile -->
+    <a
+      href="tel:19542882717"
+      class="nav-link menu-link phone-link-mobile d-block d-lg-none"
+      style="font-weight: 600; text-align: right"
+    >
+      +1-954-288-2717
+    </a>
   </nav>
   <!-- END nav -->
 </template>
@@ -158,5 +166,27 @@ export default {
 /* Ensure toggler is right-aligned on all screens */
 .navbar .navbar-toggler {
   margin-left: auto;
+}
+
+/* Always show phone on mobile, hide in desktop nav */
+.phone-link-mobile {
+  color: #ffd700;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .phone-link-mobile {
+    display: none !important;
+  }
+}
+@media (max-width: 991.98px) {
+  .phone-link {
+    display: none !important;
+  }
 }
 </style>
