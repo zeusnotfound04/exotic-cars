@@ -123,8 +123,10 @@
           </div>
           <h3 class="feature-title">Our Story</h3>
           <p class="feature-description">
-            Born in Miami, we’ve grown from a boutique rental service into a full-service luxury concierge brand trusted
-            by discerning clients worldwide.
+            Miami Exotic Rents was founded in 2021 by Jachai Hargrove, who started the company at just 16 years old.
+            What began as a passion project focused solely on exotic car rentals quickly grew into something bigger.
+            Over time, Miami Exotic Rents expanded into a full concierge service, catering to clients across South
+            Florida with the most exclusive cars, experiences, and luxury offerings.
           </p>
         </div>
 

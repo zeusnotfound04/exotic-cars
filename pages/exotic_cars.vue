@@ -30,7 +30,7 @@
     <div class="container">
       <div class="row">
         <div v-if="pending">Loading...</div>
-        <div v-else v-for="(car, index) in cars" :key="index" class="col-12 col-md-6 col-lg-4 mb-4">
+        <div v-else v-for="(car, index) in sortedCars" :key="index" class="col-12 col-md-6 col-lg-4 mb-4">
           <div class="car-card" :data-aos="'fade-up'" :data-aos-delay="car.id ? car.id * 100 : index * 100">
             <div class="car-image">
               <img
@@ -110,20 +110,24 @@ export default {
 };
 </script>
 <script setup>
+import { computed } from "vue";
 let cars = [];
 console.log("setup cars");
 // const {data, pending, error} = await useFetch("http://localhost:3001/api/get/cars/", {
 const {data, pending, error} = await useFetch("/api/get/cars/", {
   onResponse({request, response, options}) {
-    // console.log(response);
     cars = response._data.data;
-    console.log(cars);
-
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.src = "https://miamiexotics.b-cdn.net/js/main.js";
     document.body.appendChild(script);
   },
 });
-// console.log(data);
+
+// Sort cars by maker alphabetically (case-insensitive)
+const sortedCars = computed(() =>
+  [...cars].sort((a, b) =>
+    (a.maker || "").toLowerCase().localeCompare((b.maker || "").toLowerCase())
+  )
+);
 </script>

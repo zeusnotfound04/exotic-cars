@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-lg-6">
-          <div class="car-wrap rounded ftco-animate">
+          <div class="car-wrap rounded">
             <div
               class="img rounded d-flex align-items-end"
               :style="{
@@ -71,15 +71,16 @@ export default {
 };
 </script>
 <script setup>
-import { ref, computed } from "vue";
-import { useRoute, useHead } from "#imports";
+import {ref, computed} from "vue";
+import {useRoute, useHead} from "#imports";
 
 const route = useRoute();
 const title = route.params.title;
 
 // Dynamic meta description using the property title
-const metaDescription = computed(() =>
-  `Rent ${title} and other exclusive properties in Miami. Enjoy luxury homes, premium amenities, and seamless booking with Miami Exotic Rents.`
+const metaDescription = computed(
+  () =>
+    `Rent ${title} and other exclusive properties in Miami. Enjoy luxury homes, premium amenities, and seamless booking with Miami Exotic Rents.`
 );
 
 // Always ensure trailing slash on canonical URL
@@ -108,13 +109,11 @@ useHead({
 });
 
 let property = [];
-console.log("setup cars");
 // const {data, pending, error} = await useFetch("http://localhost:3001/api/get/property/" + title, {
 const {data, pending, error} = await useFetch("/api/get/property/" + title, {
   onResponse({request, response, options}) {
     // console.log(response._data.data);
     property = response._data.data;
-    // console.log(property);
 
     const script = document.createElement("script");
     script.type = "text/javascript";
