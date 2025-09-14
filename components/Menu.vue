@@ -145,18 +145,18 @@ export default {
             >
           </li>
           <li class="nav-item d-none d-lg-block">
-            <a class="nav-link menu-link" href="tel:19542882717" style="font-weight: 600"> +1-954-288-2717 </a>
+            <a class="nav-link menu-link" href="tel:19548074315" style="font-weight: 600"> +1-954-807-4315 </a>
           </li>
         </ul>
       </div>
     </div>
     <!-- Always show phone on mobile -->
     <a
-      href="tel:19542882717"
+      href="tel:9548074315"
       class="nav-link menu-link phone-link-mobile d-block d-lg-none"
       style="font-weight: 600; text-align: right"
     >
-      +1-954-288-2717
+      +1-954-807-4315
     </a>
   </nav>
   <!-- END nav -->

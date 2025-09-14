@@ -55,7 +55,7 @@
         <p>Drive Away: Pick up your car at our convenient locations or opt for our delivery service.</p>
         <p>Contact Us</p>
         <p>Ready to elevate your Miami experience? Contact us today to book your dream car!</p>
-        Phone: <a href="tel:+19542882717">954-288-2717</a> Email:
+        Phone: <a href="tel:9548074315">+1-954-807-4315</a> Email:
         <a href="mailto:admin@miamiexoticrents.com">admin@miamiexoticrents.com</a>
 
         <p>Follow us on social media to stay updated on our latest offerings and promotions!</p>

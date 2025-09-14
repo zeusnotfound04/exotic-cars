@@ -45,7 +45,7 @@
                 </div>
                 <p>
                   <span>Phone:</span>
-                  <a href="tel:9542882717">+1 954-288-2717</a>
+                  <a href="tel:9548074315">+1 954-807-4315</a>
                 </p>
               </div>
             </div>
@@ -140,7 +140,7 @@ export default {
       data_string += ", Contact: " + this.email;
       data_string += ", Subject: " + this.subject;
       data_string += ", Message: " + this.message;
-      let url = "https://api.whatsapp.com/send?phone=19542882717&text=" + data_string;
+      let url = "https://api.whatsapp.com/send?phone=19548074315&text=" + data_string;
       window.open(url, "_blank");
       $toast.success("Thank you for contacting us, we will contact you shortly!");
       // $fetch("/api/contact_message/", {

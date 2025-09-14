@@ -11,7 +11,7 @@
     <div
       class="hero-background"
       style="
-        background: url('https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')
+        background: url('https://miamiexotics.b-cdn.net/img/photo-1563720223185-11003d516935.avif')
           center/cover fixed;
       "
     >
@@ -132,7 +132,7 @@
         <div class="feature-card chauffeur-card" data-vehicle="maybach">
           <div class="chauffeur-image">
             <img
-              src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              src="https://miamiexotics.b-cdn.net/img/photo-1555215695-3004980ad54e.avif"
               alt="Maybach Chauffeur Service"
               loading="lazy"
             />

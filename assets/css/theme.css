@@ -730,7 +730,7 @@ h6 {
 .hero-background {
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+    background: url('https://miamiexotics.b-cdn.net/img/photo-1544636331-e26879cd4d9b.avif') center/cover fixed;
 }
 
 .hero-overlay {
@@ -876,7 +876,7 @@ h6 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    background: url('https://miamiexotics.b-cdn.net/img/photo-1544636331-e26879cd4d9b.avif') center/cover;
     margin-bottom: 4rem;
     border-radius: 1rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -925,7 +925,7 @@ h6 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    background: url('https://miamiexotics.b-cdn.net/img/photo-1567899378494-47b22a2ae96a.avif') center/cover;
 }
 
 .yacht-overlay {
@@ -1089,7 +1089,7 @@ h6 {
 /* .yacht-hero {
     position: relative;
     height: 600px;
-    background: url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    background: url('https://miamiexotics.b-cdn.net/img/photo-1567899378494-47b22a2ae96a.avif') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1141,7 +1141,7 @@ h6 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    background: url('https://miamiexotics.b-cdn.net/img/photo-1512917774080-9991f1c4c750.avif') center/cover;
     margin-bottom: 4rem;
     border-radius: 1rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
