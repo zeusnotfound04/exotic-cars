@@ -5,11 +5,11 @@ import "../assets/css/theme.css";
 import "../assets/css/open-iconic-bootstrap.min.css";
 import "../assets/css/animate.css";
 
-import "../assets/css/owl.carousel.min.css";
-import "../assets/css/owl.theme.default.min.css";
+// import "../assets/css/owl.carousel.min.css";
+// import "../assets/css/owl.theme.default.min.css";
 import "../assets/css/magnific-popup.css";
 
-import "../assets/css/aos.css";
+// import "../assets/css/aos.css";
 
 import "../assets/css/ionicons.min.css";
 
@@ -137,7 +137,7 @@ export default {
             <nuxt-link class="nav-link menu-link" to="/yachts">Yachts</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/houses">Houses</nuxt-link>
+            <nuxt-link class="nav-link menu-link" to="/properties">Properties</nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link class="nav-link menu-link" to="/security_deposits" @click="visible = !visible"

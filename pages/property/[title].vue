@@ -8,7 +8,7 @@
             <div
               class="img rounded d-flex align-items-end"
               :style="{
-                backgroundImage: `url(https:${property.frontImage.fields.file.url})`,
+                backgroundImage: `url(https:${property.frontImage.fields.file.url + '?w=683&h=1024'})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }"
@@ -62,12 +62,7 @@
 </template>
 <script>
 export default {
-  created: function () {
-    // const script = document.createElement("script");
-    // script.type = "text/javascript";
-    // script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    // document.body.appendChild(script);
-  },
+  created: function () {},
 };
 </script>
 <script setup>
@@ -114,11 +109,6 @@ const {data, pending, error} = await useFetch("/api/get/property/" + title, {
   onResponse({request, response, options}) {
     // console.log(response._data.data);
     property = response._data.data;
-
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
   },
 });
 // console.log(data);

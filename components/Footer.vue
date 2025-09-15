@@ -21,7 +21,7 @@
             <h4>Services</h4>
             <nuxt-link to="/exotic_cars">Exotic Cars</nuxt-link>
             <nuxt-link to="/yachts">Luxury Yachts</nuxt-link>
-            <nuxt-link to="/houses">Premium Properties</nuxt-link>
+            <nuxt-link to="/properties">Premium Properties</nuxt-link>
           </div>
 
           <div class="link-group">

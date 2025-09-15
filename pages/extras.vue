@@ -11,8 +11,7 @@
     <div
       class="hero-background"
       style="
-        background: url('https://miamiexotics.b-cdn.net/img/photo-1563720223185-11003d516935.avif')
-          center/cover fixed;
+        background: url('https://miamiexotics.b-cdn.net/img/photo-1563720223185-11003d516935.avif') center/cover fixed;
       "
     >
       <div class="hero-overlay"></div>
@@ -355,29 +354,18 @@
 </template>
 <script>
 export default {
-  created: function () {
-    // const script = document.createElement("script");
-    // script.type = "text/javascript";
-    // script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    // document.body.appendChild(script);
-  },
+  created: function () {},
 };
 </script>
 <script setup>
-let extras = [];
-console.log("setup properties");
-const {data, pending, error} = await useFetch("http://localhost:3002/api/get/extras/", {
-  // const {data, pending, error} = await useFetch("/api/get/extras/", {
-  onResponse({request, response, options}) {
-    // console.log(response);
-    extras = response._data.data;
-    console.log(extras);
-
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
-  },
-});
+// let extras = [];
+// console.log("setup properties");
+// const {data, pending, error} = await useFetch("http://localhost:3002/api/get/extras/", {
+//   // const {data, pending, error} = await useFetch("/api/get/extras/", {
+//   onResponse({request, response, options}) {
+//     // console.log(response);
+//     extras = response._data.data;
+//   },
+// });
 // console.log(data);
 </script>

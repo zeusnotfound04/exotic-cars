@@ -1,9 +1,9 @@
 <template>
   <Head>
-    <Title>Houses</Title>
+    <Title>Properties</Title>
     <Meta
       name="description"
-      content="Browse luxury houses for rent in Miami. Discover exclusive properties with premium amenities and enjoy a seamless booking experience with Miami Exotic Rents."
+      content="Browse luxury properties for rent in Miami. Discover exclusive properties with premium amenities and enjoy a seamless booking experience with Miami Exotic Rents."
     />
   </Head>
   <section class="properties-section">
@@ -27,7 +27,7 @@
           <div class="car-card" :data-aos="'fade-up'" :data-aos-delay="property.id ? property.id * 100 : index * 100">
             <div class="car-image">
               <img
-                :src="`https:${property.frontImage?.fields?.file?.url || property.image}`"
+                :src="`https:${property.frontImage?.fields?.file?.url + '?w=683&h=1024' || property.image}`"
                 :alt="property.title || property.name"
                 loading="lazy"
               />
@@ -93,12 +93,7 @@
 </template>
 <script>
 export default {
-  created: function () {
-    // const script = document.createElement("script");
-    // script.type = "text/javascript";
-    // script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    // document.body.appendChild(script);
-  },
+  created: function () {},
 };
 </script>
 <script setup>
@@ -110,11 +105,6 @@ const {data, pending, error} = await useFetch("/api/get/properties/", {
     // console.log(response);
     properties = response._data.data;
     // console.log(properties);
-
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
   },
 });
 // console.log(data);

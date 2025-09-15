@@ -6,7 +6,7 @@
           <div class="car-card" data-aos="fade-up" :data-aos-delay="car_data.id ? car_data.id * 100 : 0">
             <div class="car-image">
               <img
-                :src="`https:${car_data.frontImage?.fields?.file?.url || car_data.image}`"
+                :src="`https:${car_data.frontImage?.fields?.file?.url + '?w=683&h=1024' || car_data.image}`"
                 :alt="car_data.title || car_data.name"
                 loading="lazy"
               />
@@ -68,7 +68,7 @@
       <div class="gallery">
         <div v-for="(car, index) in car_data.gallery" :key="index">
           <img
-            :src="`https:${car.fields.file.url}`"
+            :src="`https:${car.fields.file.url + '?w=683&h=1024'}`"
             :alt="`${car.fields.title}`"
             @click="openModal(`https:${car.fields.file.url}`)"
             style="cursor: pointer"
@@ -87,12 +87,7 @@
 </template>
 <script>
 export default {
-  created: function () {
-    // const script = document.createElement("script");
-    // script.type = "text/javascript";
-    // script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    // document.body.appendChild(script);
-  },
+  created: function () {},
 };
 </script>
 <script setup>
@@ -141,11 +136,6 @@ const {data, pending, error} = await useFetch("/api/get/car/" + title, {
     // console.log(response._data.data);
     car_data = response._data.data;
     // console.log(car_data);
-
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
   },
 });
 // console.log(data);

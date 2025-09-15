@@ -223,11 +223,6 @@
 
 <script>
 export default {
-  created: function () {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
-  },
+  created: function () {},
 };
 </script>

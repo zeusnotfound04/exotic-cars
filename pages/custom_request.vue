@@ -188,10 +188,6 @@ export default {
     },
   },
   created: function () {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
     $(function () {
       const currentDate = new Date();
       $("#start_date").datepicker("update", currentDate);

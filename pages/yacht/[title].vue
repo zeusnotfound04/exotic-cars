@@ -6,7 +6,7 @@
           <div class="car-card" data-aos="fade-up" :data-aos-delay="yacht_data.id ? yacht_data.id * 100 : 0">
             <div class="car-image">
               <img
-                :src="`https:${yacht_data.frontImage?.fields?.file?.url || yacht_data.image}`"
+                :src="`https:${yacht_data.frontImage?.fields?.file?.url + '?w=683&h=1024' || yacht_data.image}`"
                 :alt="yacht_data.title || yacht_data.name"
                 loading="lazy"
               />
@@ -94,12 +94,7 @@
 </template>
 <script>
 export default {
-  created: function () {
-    // const script = document.createElement("script");
-    // script.type = "text/javascript";
-    // script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    // document.body.appendChild(script);
-  },
+  created: function () {},
 };
 </script>
 <script setup>
@@ -148,11 +143,6 @@ const {data, pending, error} = await useFetch("/api/get/yacht/" + title, {
     // console.log(response._data.data);
     yacht_data = response._data.data;
     // console.log(yacht_data);
-
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
   },
 });
 // console.log(data);

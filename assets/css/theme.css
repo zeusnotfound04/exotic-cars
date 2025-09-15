@@ -864,14 +864,15 @@ h6 {
 
 /* Fleet Section */
 .fleet-section {
-    padding: 5rem 0;
+    /* padding: 5rem 0; */
     background: linear-gradient(180deg, var(--primary-black), var(--charcoal));
 }
 
 /* Fleet Hero Section */
 .fleet-hero {
     position: relative;
-    height: 60vh;
+    height: 80vh;
+    padding: 5em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -912,15 +913,15 @@ h6 {
 
 /* Yacht Section */
 .yacht-section {
-    padding: 5rem 0;
+    /* padding: 5rem 0; */
     background: linear-gradient(180deg, var(--primary-black), var(--charcoal));
 }
 
 /* Yacht Hero Section */
 .yacht-hero {
-    margin-top: 80px;
+    /* margin-top: 80px; */
     position: relative;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -976,6 +977,7 @@ h6 {
 .section-cta {
     text-align: center;
     margin-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .fleet-grid {
@@ -1081,24 +1083,6 @@ h6 {
     font-weight: 600;
 }
 
-/* Yacht Section */
-.yacht-section {
-    padding: 5rem 0;
-}
-
-/* .yacht-hero {
-    position: relative;
-    height: 600px;
-    background: url('https://miamiexotics.b-cdn.net/img/photo-1567899378494-47b22a2ae96a.avif') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 4rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-} */
-
 .yacht-overlay {
     position: absolute;
     inset: 0;
@@ -1129,14 +1113,14 @@ h6 {
 
 /* Properties Section */
 .properties-section {
-    padding: 5rem 0;
+    /* padding: 5rem 0; */
     background: linear-gradient(180deg, var(--primary-black), var(--charcoal));
 }
 
 /* Properties Hero Section */
 .properties-hero {
     position: relative;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1576,7 +1560,7 @@ h6 {
 .main-content {
     min-height: 100vh;
     background: var(--primary-black);
-    padding-top: 80px;
+    /* padding-top: 80px; */
 }
 
 .page-header {
@@ -1995,5 +1979,17 @@ h6 {
 
     50% {
         opacity: 0.5;
+    }
+}
+
+@media (max-width: 600px) {
+    .properties-title {
+        font-size: 2rem;
+        line-height: 1.1;
+        word-break: break-word;
+        white-space: normal;
+        display: block;
+        text-align: center;
+        max-width: 95vw;
     }
 }

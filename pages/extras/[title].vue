@@ -8,7 +8,7 @@
             <div
               class="img rounded d-flex align-items-end"
               :style="{
-                backgroundImage: `url(https:${extra_data.frontImage.fields.file.url})`,
+                backgroundImage: `url(https:${extra_data.frontImage.fields.file.url + '?w=683&h=1024'})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }"
@@ -60,12 +60,7 @@
 </template>
 <script>
 export default {
-  created: function () {
-    // const script = document.createElement("script");
-    // script.type = "text/javascript";
-    // script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    // document.body.appendChild(script);
-  },
+  created: function () {},
 };
 </script>
 <script setup>
@@ -106,21 +101,16 @@ useHead({
   ],
 });
 
-let extra_data = [];
-console.log("setup cars");
-const {data, pending, error} = await useFetch("http://localhost:3001/api/get/extra/" + title, {
-  // const {data, pending, error} = await useFetch("/api/get/extra/" + title, {
-  onResponse({request, response, options}) {
-    // console.log(response._data.data);
-    extra_data = response._data.data;
-    // console.log(car_data);
-
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
-  },
-});
+// let extra_data = [];
+// console.log("setup cars");
+// const {data, pending, error} = await useFetch("http://localhost:3001/api/get/extra/" + title, {
+//   // const {data, pending, error} = await useFetch("/api/get/extra/" + title, {
+//   onResponse({request, response, options}) {
+//     // console.log(response._data.data);
+//     extra_data = response._data.data;
+//     // console.log(car_data);
+//   },
+// });
 // console.log(data);
 
 const showModal = ref(false);

@@ -1,7 +1,10 @@
 <template>
   <Head>
     <Title>About</Title>
-    <Meta name="description" content="Learn more about Miami Exotic Rents, your trusted provider for luxury car, yacht, and property rentals in Miami. Discover our premium services and commitment to excellence." />
+    <Meta
+      name="description"
+      content="Learn more about Miami Exotic Rents, your trusted provider for luxury car, yacht, and property rentals in Miami. Discover our premium services and commitment to excellence."
+    />
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
@@ -194,10 +197,6 @@
 <script>
 export default {
   created: function () {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
   },
 };
 </script>

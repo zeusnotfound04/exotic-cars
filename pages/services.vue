@@ -1,7 +1,10 @@
 <template>
   <Head>
     <Title>Services</Title>
-    <Meta name="description" content="Discover our full range of luxury rental services in Miami, including exotic cars, yachts, and exclusive properties. Enjoy premium experiences and personalized service." />
+    <Meta
+      name="description"
+      content="Discover our full range of luxury rental services in Miami, including exotic cars, yachts, and exclusive properties. Enjoy premium experiences and personalized service."
+    />
   </Head>
   <section
     class="hero-wrap hero-wrap-2 js-fullheight"
@@ -571,11 +574,6 @@
 </template>
 <script>
 export default {
-  created: function () {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
-  },
+  created: function () {},
 };
 </script>

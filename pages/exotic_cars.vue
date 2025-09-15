@@ -34,7 +34,7 @@
           <div class="car-card" :data-aos="'fade-up'" :data-aos-delay="car.id ? car.id * 100 : index * 100">
             <div class="car-image">
               <img
-                :src="`https:${car.frontImage?.fields?.file?.url || car.image}`"
+                :src="`https:${car.frontImage?.fields?.file?.url + '?w=683&h=1024' || car.image}`"
                 :alt="car.title || car.name"
                 loading="lazy"
               />
@@ -101,33 +101,22 @@
 </template>
 <script>
 export default {
-  created: function () {
-    // const script = document.createElement("script");
-    // script.type = "text/javascript";
-    // script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    // document.body.appendChild(script);
-  },
+  created: function () {},
 };
 </script>
 <script setup>
-import { computed } from "vue";
+import {computed} from "vue";
 let cars = [];
 console.log("setup cars");
 // const {data, pending, error} = await useFetch("http://localhost:3001/api/get/cars/", {
 const {data, pending, error} = await useFetch("/api/get/cars/", {
   onResponse({request, response, options}) {
     cars = response._data.data;
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://miamiexotics.b-cdn.net/js/main.js";
-    document.body.appendChild(script);
   },
 });
 
 // Sort cars by maker alphabetically (case-insensitive)
 const sortedCars = computed(() =>
-  [...cars].sort((a, b) =>
-    (a.maker || "").toLowerCase().localeCompare((b.maker || "").toLowerCase())
-  )
+  [...cars].sort((a, b) => (a.maker || "").toLowerCase().localeCompare((b.maker || "").toLowerCase()))
 );
 </script>
