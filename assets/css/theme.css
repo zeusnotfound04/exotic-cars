@@ -31,6 +31,22 @@
     --transition-luxury: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* Premium Color Palette - Dark Theme */
+:root {
+    --yacht-gold: var(--luxury-gold);
+    --yacht-gold-light: rgba(255, 215, 0, 0.2);
+    --yacht-gold-dark: #B8941F;
+    --yacht-navy: var(--primary-black);
+    --yacht-navy-light: var(--charcoal);
+    --yacht-blue: var(--luxury-gold);
+    --yacht-white: var(--primary-white);
+    --yacht-cream: var(--glass-white);
+    --yacht-gray: rgba(255, 255, 255, 0.7);
+    --yacht-dark: var(--dark-charcoal);
+    --yacht-shadow: var(--shadow-luxury);
+    --yacht-shadow-dark: rgba(0, 0, 0, 0.6);
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--primary-black);
@@ -52,8 +68,8 @@ h6 {
 
 .container {
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin: 0px auto;
+    padding: 0px 2rem;
 }
 
 /* Text Utilities */
@@ -619,6 +635,59 @@ h6 {
     justify-content: center;
 }
 
+.controls-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-select,
+.sort-select {
+    padding: 0.75rem 3rem 0.75rem 1.5rem;
+    border: 2px solid var(--yacht-gold-light);
+    border-radius: 50px;
+    background: var(--yacht-dark);
+    color: var(--yacht-white);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFD700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+}
+
+.filter-select:focus,
+.sort-select:focus {
+    outline: none;
+    border-color: var(--yacht-gold);
+    box-shadow: 0 0 0 3px var(--yacht-shadow);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFD700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+.filter-select:hover,
+.sort-select:hover {
+    border-color: var(--yacht-gold);
+    background: var(--yacht-navy-light);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFD700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+}
+
 /* Mobile Modal Styles */
 @media screen and (max-width: 768px) {
     .modal-content {
@@ -654,6 +723,16 @@ h6 {
     .modal-image {
         aspect-ratio: 16/9;
     }
+
+    .controls-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        justify-content: center;
+    }
+
 }
 
 /* Button Styles */
@@ -1749,6 +1828,23 @@ h6 {
     border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
+.filter-select:hover,
+.sort-select:hover {
+    border-color: var(--yacht-gold);
+    background: var(--yacht-navy-light);
+    background-image: url(data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFD700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e);
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+}
+
+.filter-container {
+    margin-bottom: 3rem;
+    background: var(--yacht-dark);
+    padding: 2rem 0px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
 @media (max-width: 1024px) {
     .page-header h1 {
         font-size: 3.2rem;
@@ -1805,6 +1901,18 @@ h6 {
     .intro-text {
         font-size: 1.1rem;
         padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .filter-select,
+    .sort-select {
+        min-width: 100%;
+        font-size: 0.9rem;
+        background-size: 0.875rem;
+        padding: 0.875rem 2.5rem 0.875rem 1rem;
+        background-position: right 0.875rem center;
     }
 }
 

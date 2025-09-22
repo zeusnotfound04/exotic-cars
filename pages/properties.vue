@@ -19,11 +19,29 @@
     </div>
   </section>
 
+  <!-- Location Filter Dropdown -->
+
+  <div class="filter-container">
+    <div class="container">
+      <div class="controls-container">
+        <div class="filter-group">
+          <select id="maker-filter" class="form-select filter-select" v-model="selectedLocation">
+            <option value="">All Locations</option>
+            <option v-for="location in locations" :key="location" :value="location">{{ location }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section class="ftco-section bg-light">
     <div class="container">
       <div class="row">
         <div v-if="pending">Loading...</div>
-        <div v-else v-for="(property, index) in properties" :key="index" class="col-12 col-md-6 col-lg-4 mb-4">
+        <div v-else-if="filteredProperties.length === 0" class="col-12 text-center py-5">
+          <p>No properties found for this location.</p>
+        </div>
+        <div v-else v-for="(property, index) in filteredProperties" :key="index" class="col-12 col-md-6 col-lg-4 mb-4">
           <div class="car-card" :data-aos="'fade-up'" :data-aos-delay="property.id ? property.id * 100 : index * 100">
             <div class="car-image">
               <img
@@ -36,38 +54,29 @@
             </div>
             <div class="car-details">
               <h3 class="car-name">{{ property.title || property.name }}</h3>
-              <div class="car-specs" v-if="property.bedrooms || property.bathrooms || property.amenities">
-                <div class="spec-item" v-if="property.bedrooms">
-                  <div class="spec-label">
-                    <svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-                    </svg>
-                    Bedrooms
-                  </div>
-                  <span class="spec-value">{{ property.bedrooms }}</span>
+              <div class="car-specs" v-if="property.features">
+                <div class="spec-label">
+                  <svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                  </svg>
+                  Features
                 </div>
-                <div class="spec-item" v-if="property.bathrooms">
-                  <div class="spec-label">
-                    <svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor">
-                      <path
-                        d="M8 14c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1zm4 0c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1zm3 0c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1zm-4-4.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zm0-2c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5z"
-                      />
-                    </svg>
-                    Bathrooms
-                  </div>
-                  <span class="spec-value">{{ property.bathrooms }}</span>
-                </div>
-                <div class="spec-item" v-if="property.amenities">
-                  <div class="spec-label">
-                    <svg class="spec-icon" viewBox="0 0 24 24" fill="currentColor">
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                      />
-                    </svg>
-                    Features
-                  </div>
-                  <span class="spec-value">{{ property.amenities }}</span>
-                </div>
+                <ul class="features-list spec-value">
+                  <li v-for="(feature, idx) in property.features" :key="idx">{{ feature }}</li>
+                </ul>
+              </div>
+              <div class="location-label" v-if="property.location">
+                <svg
+                  class="location-icon"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  style="width: 1.1em; height: 1.1em; vertical-align: -0.15em; margin-right: 6px"
+                >
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
+                  />
+                </svg>
+                Location: {{ property.location }}
               </div>
               <nuxt-link
                 :to="{path: '/custom_request', query: {vehicle: `${property.title}`}}"
@@ -97,15 +106,53 @@ export default {
 };
 </script>
 <script setup>
+import {ref, computed} from "vue";
 let properties = [];
-console.log("setup properties");
-// const {data, pending, error} = await useFetch("http://localhost:3001/api/get/properties/", {
+const selectedLocation = ref("");
+
+// Fetch properties
 const {data, pending, error} = await useFetch("/api/get/properties/", {
   onResponse({request, response, options}) {
-    // console.log(response);
     properties = response._data.data;
-    // console.log(properties);
   },
 });
-// console.log(data);
+
+// Get unique locations
+const locations = computed(() => {
+  const set = new Set();
+  properties.forEach((property) => {
+    if (property.location) set.add(property.location);
+  });
+  return Array.from(set).sort((a, b) => a.localeCompare(b));
+});
+
+// Filtered properties by selected location
+const filteredProperties = computed(() => {
+  if (!selectedLocation.value) return properties;
+  return properties.filter((property) => property.location === selectedLocation.value);
+});
 </script>
+
+<style scoped>
+.location-label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+
+  margin-bottom: 1em;
+}
+.location-icon {
+  color: #ffd700;
+  flex-shrink: 0;
+}
+.features-list {
+  margin: 0;
+  padding-left: 40px;
+  list-style-type: disc;
+  /* color: #222; */
+  font-size: 1rem;
+}
+.features-list li {
+  margin-bottom: 0.25rem;
+}
+</style>

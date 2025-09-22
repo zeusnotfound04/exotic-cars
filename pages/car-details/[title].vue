@@ -10,7 +10,7 @@
                 :alt="car_data.title || car_data.name"
                 loading="lazy"
               />
-              <div class="car-badge">{{ car_data.category || "Supercar" }}</div>
+              <div class="car-badge">{{ car_data.carType || "Supercar" }}</div>
               <div class="car-price">${{ car_data.dailyPrice || car_data.dailyRate }}/day</div>
             </div>
             <div class="car-details">
