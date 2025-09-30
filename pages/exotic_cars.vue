@@ -39,8 +39,19 @@
         <div v-else-if="sortedCars.length === 0" class="col-12 text-center py-5">
           <p>No cars found for this brand.</p>
         </div>
-        <div v-else v-for="(car, index) in sortedCars" :key="index" class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="car-card" :data-aos="'fade-up'" :data-aos-delay="car.id ? car.id * 100 : index * 100">
+        <div
+          v-else
+          v-for="(car, index) in sortedCars"
+          :key="index"
+          class="col-12 col-md-6 col-lg-4 mb-4"
+        >
+          <div
+            class="car-card"
+            :data-aos="'fade-up'"
+            :data-aos-delay="car.id ? car.id * 100 : index * 100"
+            @click="$router.push({ path: '/custom_request', query: { vehicle: `${car.title} ${car.maker}` } })"
+            style="cursor: pointer;"
+          >
             <div class="car-image">
               <img
                 :src="`https:${car.frontImage?.fields?.file?.url + '?w=683&h=1024' || car.image}`"
@@ -122,6 +133,7 @@ const selectedMaker = ref("");
 const {data, pending, error} = await useFetch("/api/get/cars/", {
   onResponse({request, response, options}) {
     cars = response._data.data;
+    console.log(cars);
   },
 });
 
@@ -137,6 +149,14 @@ const makers = computed(() => {
 // Filter and sort cars by selected maker
 const sortedCars = computed(() => {
   let filtered = selectedMaker.value ? cars.filter((car) => car.maker === selectedMaker.value) : cars;
-  return [...filtered].sort((a, b) => (a.maker || "").toLowerCase().localeCompare((b.maker || "").toLowerCase()));
+  // Convert order to integer, send cars with invalid order to the bottom
+  return [...filtered].sort((a, b) => {
+    const aOrder = Number.isFinite(parseInt(a.order)) ? parseInt(a.order) : null;
+    const bOrder = Number.isFinite(parseInt(b.order)) ? parseInt(b.order) : null;
+    if (aOrder === null && bOrder === null) return 0;
+    if (aOrder === null) return 1;
+    if (bOrder === null) return -1;
+    return aOrder - bOrder;
+  });
 });
 </script>

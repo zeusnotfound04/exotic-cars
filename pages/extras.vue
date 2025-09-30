@@ -1,11 +1,12 @@
 <template>
   <Head>
-    <Title>Extras</Title>
+    <Title>Extras - Miami Exotic Rents | Chauffeurs & VIP Club Access</Title>
     <Meta
       name="description"
-      content="Explore premium extras for your Miami rental experience. Choose from luxury add-ons and services to enhance your car, yacht, or property booking with Miami Exotic Rents."
+      content="Luxury chauffeur services and VIP club access in Miami. Professional drivers, premium vehicles, and exclusive nightlife experiences."
     />
   </Head>
+
   <!-- Hero Section -->
   <section id="hero" class="hero-section">
     <div
@@ -127,20 +128,18 @@
             Reserve Now
           </a>
         </div>
-
         <div class="feature-card chauffeur-card" data-vehicle="maybach">
           <div class="chauffeur-image">
             <img
-              src="https://miamiexotics.b-cdn.net/img/photo-1555215695-3004980ad54e.avif"
+              src="https://images.ctfassets.net/avyb1kdxh0xa/4wyfs6lPpGuWpygxgZkdAf/35112ddf8f360fe4cf43b3bcf2b2a925/DSC06084.jpeg?w=683&h=1024"
               alt="Maybach Chauffeur Service"
               loading="lazy"
             />
             <div class="chauffeur-badge">Exclusive</div>
           </div>
-          <h3 class="feature-title">Competition Chauffeur</h3>
+          <h3 class="feature-title">Sprinter 3500 Limousine</h3>
           <p class="feature-description">
-            The pinnacle of automotive luxury. Experience unparalleled comfort and prestige with our Maybach chauffeur
-            service.
+            Travel with your party in spacious elegance, premium amenities, and VIP comfort for any Miami occasion.
           </p>
           <div class="chauffeur-price">From $250/hour</div>
           <a

@@ -25,6 +25,14 @@ export default {
       visible: false,
     };
   },
+  methods: {
+    closeMenu() {
+      const nav = document.getElementById("ftco-nav");
+      if (nav && nav.classList.contains("show")) {
+        nav.classList.remove("show");
+      }
+    },
+  },
 };
 </script>
 
@@ -128,21 +136,22 @@ export default {
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto nav-menu">
           <li class="nav-item active">
-            <nuxt-link class="nav-link menu-link" to="/" @click="visible = !visible">Home</nuxt-link>
+            <nuxt-link class="nav-link menu-link" to="/" @click="closeMenu">Home</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/exotic_cars">Exotic Cars</nuxt-link>
+            <nuxt-link class="nav-link menu-link" to="/exotic_cars" @click="closeMenu">Exotic Cars</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/yachts">Yachts</nuxt-link>
+            <nuxt-link class="nav-link menu-link" to="/yachts" @click="closeMenu">Yachts</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/properties">Properties</nuxt-link>
+            <nuxt-link class="nav-link menu-link" to="/properties" @click="closeMenu">Properties</nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link menu-link" to="/security_deposits" @click="visible = !visible"
-              >Security Deposits</nuxt-link
-            >
+            <nuxt-link class="nav-link menu-link" to="/extras" @click="closeMenu">Extras</nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link class="nav-link menu-link" to="/security_deposits" @click="closeMenu">Security Deposits</nuxt-link>
           </li>
           <li class="nav-item d-none d-lg-block">
             <a class="nav-link menu-link" href="tel:19548074315" style="font-weight: 600"> +1-954-807-4315 </a>
