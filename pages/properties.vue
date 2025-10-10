@@ -42,7 +42,13 @@
           <p>No properties found for this location.</p>
         </div>
         <div v-else v-for="(property, index) in filteredProperties" :key="index" class="col-12 col-md-6 col-lg-4 mb-4">
-          <div class="car-card" :data-aos="'fade-up'" :data-aos-delay="property.id ? property.id * 100 : index * 100">
+          <div
+            class="car-card"
+            :data-aos="'fade-up'"
+            :data-aos-delay="property.id ? property.id * 100 : index * 100"
+            @click="$router.push({ path: '/custom_request', query: { vehicle: property.title } })"
+            style="cursor: pointer;"
+          >
             <div class="car-image">
               <img
                 :src="`https:${property.frontImage?.fields?.file?.url + '?w=683&h=1024' || property.image}`"
