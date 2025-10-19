@@ -6,6 +6,10 @@
       content="Explore Miami's finest selection of exotic cars for rent. Choose from luxury brands and enjoy premium vehicles, top service, and seamless booking with Miami Exotic Rents."
     />
   </Head>
+  
+  <!-- Opt-in Popup -->
+  <OptInPopup />
+  
   <!-- Fleet Section -->
   <section class="fleet-section">
     <div class="fleet-hero">
@@ -22,10 +26,24 @@
       <div class="container">
         <div class="controls-container">
           <div class="filter-group">
-            <select id="maker-filter" class="form-select filter-select" v-model="selectedMaker">
-              <option value="">All Brands</option>
-              <option v-for="maker in makers" :key="maker" :value="maker">{{ maker }}</option>
-            </select>
+            <div class="brand-filter-buttons">
+              <button 
+                class="btn btn-outline-primary filter-btn me-2 mb-2" 
+                :class="{ 'btn-primary text-white': !brandParam, 'btn-outline-primary': brandParam }"
+                @click="navigateToBrand('')"
+              >
+                All Brands
+              </button>
+              <button 
+                v-for="maker in makers" 
+                :key="maker" 
+                class="btn btn-outline-primary filter-btn me-2 mb-2"
+                :class="{ 'btn-primary text-white': brandParam === maker.toLowerCase(), 'btn-outline-primary': brandParam !== maker.toLowerCase() }"
+                @click="navigateToBrand(maker.toLowerCase())"
+              >
+                {{ maker }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -126,31 +144,47 @@ export default {
 </script>
 <script setup>
 import {ref, computed} from "vue";
-let cars = [];
+
+// Get route params for brand filtering
+const route = useRoute();
+const brandParam = computed(() => route.params.brand);
+
+// Initialize cars as a reactive ref
+const cars = ref([]);
 const selectedMaker = ref("");
 
 // Fetch cars
 const {data, pending, error} = await useFetch("/api/get/cars/", {
   onResponse({request, response, options}) {
-    cars = response._data.data;
-    console.log(cars);
+    cars.value = response._data.data;
+    console.log(cars.value);
   },
 });
 
 // Get unique car makers
 const makers = computed(() => {
   const set = new Set();
-  cars.forEach((car) => {
+  cars.value.forEach((car) => {
     if (car.maker) set.add(car.maker);
   });
   return Array.from(set).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 });
 
-// Filter and sort cars by selected maker
+// Navigation function for brand filtering
+const navigateToBrand = (brand) => {
+  if (brand) {
+    navigateTo(`/exotic_cars/${brand}`);
+  } else {
+    navigateTo('/exotic_cars');
+  }
+};
+
+// Filter cars by brand param if present, otherwise show all
 const sortedCars = computed(() => {
-  let filtered = selectedMaker.value ? cars.filter((car) => car.maker === selectedMaker.value) : cars;
-  // Convert order to integer, send cars with invalid order to the bottom
-  return [...filtered].sort((a, b) => {
+  const list = brandParam?.value
+    ? cars.value.filter(c => c.maker && c.maker.toLowerCase() === brandParam.value.toLowerCase())
+    : cars.value;
+  return [...list].sort((a, b) => {
     const aOrder = Number.isFinite(parseInt(a.order)) ? parseInt(a.order) : null;
     const bOrder = Number.isFinite(parseInt(b.order)) ? parseInt(b.order) : null;
     if (aOrder === null && bOrder === null) return 0;
@@ -160,3 +194,41 @@ const sortedCars = computed(() => {
   });
 });
 </script>
+
+<style scoped>
+.filter-btn {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  color: #495057;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.filter-btn:hover {
+  background: #e9ecef;
+  border-color: #dee2e6;
+  color: #212529;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.filter-btn.is-active {
+  background: #28a745;
+  border-color: #28a745;
+  color: white;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.filter-btn.is-active:hover {
+  background: #218838;
+  border-color: #1e7e34;
+  color: white;
+}
+</style>
