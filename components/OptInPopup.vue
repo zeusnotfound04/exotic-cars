@@ -58,7 +58,7 @@
           </button>
           
           <p class="privacy-text">
-            We respect your privacy. Your information will never be shared.
+            By submitting your information, you agree to receive marketing emails and text messages from Miami Exotic Rents about exclusive offers, updates, and promotions. Message and data rates may apply. You can unsubscribe or reply STOP to opt out at any time.
           </p>
         </form>
         
@@ -84,29 +84,12 @@ const formData = ref({
   phone: ''
 })
 
-// Show popup after 5 seconds or when user scrolls 50%
-let scrollTimeout = null
+// Manual trigger only - no auto-show behavior
 let hasShown = false
 
-const checkScroll = () => {
-  if (hasShown) return
-  
-  const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
-  if (scrollPercent > 50) {
-    showPopup.value = true
-    hasShown = true
-    window.removeEventListener('scroll', checkScroll)
-  }
-}
-
-const showPopupDelayed = () => {
-  if (hasShown) return
-  setTimeout(() => {
-    if (!hasShown) {
-      showPopup.value = true
-      hasShown = true
-    }
-  }, 5000)
+const showPopupManually = () => {
+  showPopup.value = true
+  hasShown = true
 }
 
 const closePopup = () => {
@@ -158,29 +141,16 @@ const submitForm = async () => {
 }
 
 onMounted(() => {
-  // Check if user has already seen the popup (localStorage)
-  /* comment out if you want it to show once buddy (keep it if you want always to show lol)
-  if (localStorage.getItem('optinPopupShown')) {
-    hasShown = true
-    return
-  }*/
-  
-  // Show popup after 5 seconds
-  showPopupDelayed()
-  
-  // Also show on scroll
-  window.addEventListener('scroll', checkScroll)
+  // No auto-trigger behavior - popup only shows when manually triggered
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', checkScroll)
+  // No event listeners to remove
 })
 
-// Mark as shown when popup is closed
-watch(() => showPopup.value, (newVal) => {
-  if (!newVal && hasShown) {
-    localStorage.setItem('optinPopupShown', 'true')
-  }
+// Expose the manual trigger function to parent components
+defineExpose({
+  showPopup: showPopupManually
 })
 </script>
 

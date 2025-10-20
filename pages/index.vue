@@ -50,6 +50,29 @@
         </a>
       </div>
 
+      <!-- Special Offer CTA -->
+      <div class="special-offer-wrapper">        
+        <button class="cta-button" @click="showOptInPopup">
+          <div class="cta-content">
+            <div class="discount-section">
+              <div class="discount-percent">5%</div>
+              <div class="discount-text">OFF</div>
+            </div>
+            
+            <div class="offer-details">
+              <h3 class="offer-title">Get Your First Rental Discount</h3>
+              <p class="offer-description">Join our exclusive club and save on luxury cars</p>
+            </div>
+            
+            <div class="cta-arrow">
+              <svg fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+
       <!-- Search Bar -->
       <!-- <div class="search-container">
         <div class="search-grid">
@@ -319,16 +342,241 @@
       </div>
     </div>
   </section>
+
+  <!-- OptIn Popup Component -->
+  <OptInPopup ref="optinPopup" />
 </template>
 
 <style scoped>
 .ftco-degree-bg {
   background-image: url("https://miamiexotics.b-cdn.net/img/bg_1.jpg");
 }
+
+/* Special Offer CTA Styles */
+.special-offer-wrapper {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.offer-badge {
+  background: linear-gradient(135deg, #ff4757, #ff3742);
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-button {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+  min-width: 400px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-color: #d4af37;
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  gap: 1.2rem;
+}
+
+.discount-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #d4af37, #f4d03f);
+  border-radius: 8px;
+  padding: 0.6rem 0.7rem;
+  min-width: 60px;
+  box-shadow: 0 1px 4px rgba(212, 175, 55, 0.3);
+}
+
+.discount-percent {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.discount-text {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.offer-details {
+  flex: 1;
+  text-align: left;
+}
+
+.offer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 0.2rem 0;
+  line-height: 1.3;
+}
+
+.offer-description {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+.cta-arrow {
+  width: 32px;
+  height: 32px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cta-button:hover .cta-arrow {
+  background: #d4af37;
+  border-color: #d4af37;
+  transform: translateX(2px);
+}
+
+.cta-button:hover .cta-arrow svg {
+  color: white;
+}
+
+.cta-arrow svg {
+  width: 16px;
+  height: 16px;
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .special-offer-wrapper {
+    margin-top: 2rem;
+    gap: 0.8rem;
+  }
+  
+  .cta-button {
+    min-width: 340px;
+    max-width: 100%;
+  }
+  
+  .cta-content {
+    padding: 0.9rem 1.2rem;
+    gap: 1rem;
+  }
+  
+  .discount-section {
+    min-width: 55px;
+    padding: 0.5rem 0.6rem;
+  }
+  
+  .discount-percent {
+    font-size: 1.2rem;
+  }
+  
+  .discount-text {
+    font-size: 0.6rem;
+  }
+  
+  .offer-title {
+    font-size: 1rem;
+  }
+  
+  .offer-description {
+    font-size: 0.8rem;
+  }
+  
+  .cta-arrow {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .cta-arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-button {
+    min-width: 300px;
+  }
+  
+  .cta-content {
+    padding: 0.8rem 1rem;
+    gap: 0.8rem;
+  }
+  
+  .discount-section {
+    min-width: 50px;
+    padding: 0.4rem 0.5rem;
+  }
+  
+  .discount-percent {
+    font-size: 1.1rem;
+  }
+  
+  .offer-title {
+    font-size: 0.95rem;
+  }
+  
+  .offer-description {
+    font-size: 0.75rem;
+  }
+  
+  .offer-badge {
+    padding: 0.35rem 1rem;
+    font-size: 0.75rem;
+  }
+}
 </style>
 
-<script>
-export default {
-  created: function () {},
-};
+<script setup>
+import { ref } from 'vue'
+import OptInPopup from '~/components/OptInPopup.vue'
+
+const optinPopup = ref(null)
+
+const showOptInPopup = () => {
+  // Trigger the OptIn popup using the exposed method
+  if (optinPopup.value) {
+    optinPopup.value.showPopup()
+  }
+}
 </script>

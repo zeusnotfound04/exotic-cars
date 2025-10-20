@@ -3,7 +3,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  
+
   app: {
     // pageTransition: { name: 'page', mode: 'out-in' },
     baseURL: '/',
@@ -11,20 +11,24 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
-      title: "Miami Exotic Cars",
+      title: "MiamiExoticRents | The Chosen Way Of Traveling",
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
-        { hid: 'og-image', property: 'og:image', content: 'https://miamiexotics.b-cdn.net/img/logo.png' },
-        { name:"theme-color", content:"#ffffff"},
-        { name:"google-site-verification", content:"Lq5PH6TMBO64FVZHKEcbyADxPr68BMyOTQFaA7HZKiU"}
+        { hid: 'og-image', property: 'og:image', content: '/embed.jpg' },
+        { hid: 'og-title', property: 'og:title', content: 'MiamiExoticRents | The Chosen Way Of Traveling' },
+        { hid: 'twitter-card', name: 'twitter:card', content: 'summary_large_image' },
+        { hid: 'twitter-image', name: 'twitter:image', content: '/embed.jpg' },
+        { hid: 'twitter-title', name: 'twitter:title', content: 'MiamiExoticRents | The Chosen Way Of Traveling' },
+        { name: "theme-color", content: "#ffffff" },
+        { name: "google-site-verification", content: "Lq5PH6TMBO64FVZHKEcbyADxPr68BMyOTQFaA7HZKiU" }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'stylesheet', type: "text/css", href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap' },
-        { rel:"manifest", href:"/site.webmanifest"},
-        { rel:"mask-icon", href:"safari-pinned-tab.svg", color:"#5bbad5"},
+        { rel: "manifest", href: "/site.webmanifest" },
+        { rel: "mask-icon", href: "safari-pinned-tab.svg", color: "#5bbad5" },
         { rel: 'stylesheet', type: "text/css", href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' },
         { rel: 'stylesheet', type: "text/css", href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' }
       ],
@@ -49,18 +53,18 @@ export default defineNuxtConfig({
   ssr: false,
 
   modules: [
-  // '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
     '@nuxt/image',
     [
       '@pinia/nuxt',
       {
         autoImports: [
-        // automatically imports `defineStore`
+          // automatically imports `defineStore`
           'defineStore',
         ],
       },
     ],
-  "@nuxtjs/seo"],
+    "@nuxtjs/seo"],
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   // pwa: {
   //   // https://pwa.nuxtjs.org/manifest
@@ -92,14 +96,14 @@ export default defineNuxtConfig({
   // axios: {
   //   // proxy: true
   // },
-  plugins:[
+  plugins: [
     // { src : '~/plugins/bootstrap.js', mode:'client' }
-    { src: "~/plugins/vue-notification.js",  ssr: false },
+    { src: "~/plugins/vue-notification.js", ssr: false },
     { src: '~/plugins/fontawesome.js', mode: 'client' }
   ],
   runtimeConfig: {
     // The private keys which are only available server-side
-    
+
     // Keys within public are also exposed client-side
     public: {
       apiDomain: 'http://192.168.10.12/',
@@ -109,7 +113,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/api/**': {
-        proxy: { to: "http://localhost:3002/api/**", },
+      proxy: { to: "http://localhost:3001/api/**", },
     }
   },
 
