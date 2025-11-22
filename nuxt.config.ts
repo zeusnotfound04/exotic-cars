@@ -3,6 +3,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  compatibilityDate: '2025-11-21',
 
   app: {
     // pageTransition: { name: 'page', mode: 'out-in' },
@@ -65,6 +66,10 @@ export default defineNuxtConfig({
       },
     ],
     "@nuxtjs/seo"],
+
+  ogImage: {
+    enabled: false  // Disable OG Image since SSR is disabled
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   // pwa: {
   //   // https://pwa.nuxtjs.org/manifest

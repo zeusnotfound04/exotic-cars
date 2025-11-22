@@ -60,7 +60,7 @@
               class="car-card"
               :data-aos="'fade-up'"
               :data-aos-delay="yacht.id ? yacht.id * 100 : index * 100"
-              @click="$router.push({ path: '/custom_request', query: { vehicle: yacht.title } })"
+              @click="$router.push('/yacht-charter-request')"
               style="cursor: pointer;"
             >
               <div class="car-image">
@@ -113,7 +113,7 @@
                   </div>
                 </div>
                 <nuxt-link
-                  :to="{path: '/custom_request', query: {vehicle: `${yacht.title}`}}"
+                  to="/yacht-charter-request"
                   class="btn btn-outline py-2 mr-1"
                   >Charter Now
                 </nuxt-link>
