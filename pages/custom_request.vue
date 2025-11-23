@@ -69,11 +69,11 @@
           </div>
           <div class="col-md-3">
             <label for="start_date" class="form-label">Start Date</label>
-            <input type="text" class="form-control datepicker-input" id="start_date" v-model="start_date" readonly />
+            <input type="date" class="form-control" id="start_date" v-model="start_date" :min="minDate" />
           </div>
           <div class="col-md-3">
             <label for="end_date" class="form-label">End Date</label>
-            <input type="text" class="form-control datepicker-input" id="end_date" v-model="end_date" readonly />
+            <input type="date" class="form-control" id="end_date" v-model="end_date" :min="minDate" />
           </div>
           <div class="col-12">
             <label for="message" class="form-label">Additional Details</label>
@@ -92,10 +92,12 @@
               @click="formSubmit"
               :disabled="isSubmitting"
             >
-              <span v-if="isSubmitting">
+              <template v-if="isSubmitting">
                 <i class="fas fa-spinner fa-spin me-2"></i>Submitting...
-              </span>
-              <span v-else>Submit Request</span>
+              </template>
+              <template v-else>
+                Submit Request
+              </template>
             </button>
           </div>
         </div>
@@ -164,6 +166,12 @@ export default {
     };
   },
 
+  computed: {
+    minDate() {
+      return new Date().toISOString().split('T')[0];
+    }
+  },
+
 
 
   methods: {
@@ -176,8 +184,8 @@ export default {
         phone: this.phone,
         email: this.email,
         vehicle: this.vehicle,
-        start_date: $("#start_date").datepicker("getDate"),
-        end_date: $("#end_date").datepicker("getDate"),
+        start_date: this.start_date,
+        end_date: this.end_date,
         message: this.message,
       };
 
@@ -206,8 +214,8 @@ export default {
           phone: this.phone,
           email: this.email,
           vehicle: this.vehicle,
-          start_date: post_data.start_date ? post_data.start_date.toLocaleDateString() : "",
-          end_date: post_data.end_date ? post_data.end_date.toLocaleDateString() : "",
+          start_date: this.start_date,
+          end_date: this.end_date,
           message: this.message,
           submission_date: new Date().toLocaleString(),
           timestamp: new Date().toISOString()
@@ -221,8 +229,8 @@ export default {
         whatsapp_message += `Name: ${this.first_name} ${this.last_name}\n`;
         whatsapp_message += `Contact: ${this.phone} | ${this.email}\n`;
         whatsapp_message += `Interested in: ${this.vehicle}\n`;
-        whatsapp_message += `Start Date: ${post_data.start_date.toLocaleDateString()}\n`;
-        whatsapp_message += `End Date: ${post_data.end_date.toLocaleDateString()}\n`;
+        whatsapp_message += `Start Date: ${this.start_date}\n`;
+        whatsapp_message += `End Date: ${this.end_date}\n`;
         
         if (this.message) whatsapp_message += `Message: ${this.message}\n`;
         const whatsapp_url = "https://api.whatsapp.com/send?phone=19542882717&text=" + encodeURIComponent(whatsapp_message);
@@ -278,16 +286,8 @@ export default {
       this.email = "";
       this.vehicle = "";
       this.message = "";
-      
-      // Reset datepickers to default dates
-      const currentDate = new Date();
-      $("#start_date").datepicker("update", currentDate);
-      this.start_date = this.formatDateForDisplay(currentDate);
-      
-      const futureDate = new Date(currentDate);
-      futureDate.setDate(currentDate.getDate() + 3);
-      $("#end_date").datepicker("update", futureDate);
-      this.end_date = this.formatDateForDisplay(futureDate);
+      this.start_date = "";
+      this.end_date = "";
     },
 
     formatDateForDisplay(date) {
@@ -295,51 +295,14 @@ export default {
     },
   },
   created: function () {
-    // Initialize default dates
-    const currentDate = new Date();
-    const futureDate = new Date(currentDate);
-    futureDate.setDate(currentDate.getDate() + 3);
-    
-    this.start_date = this.formatDateForDisplay(currentDate);
-    this.end_date = this.formatDateForDisplay(futureDate);
+    // Initialize with empty dates to let user select
+    this.start_date = "";
+    this.end_date = "";
   },
   mounted() {
     if (this.$route.query && this.$route.query.vehicle) {
       this.vehicle = this.$route.query.vehicle;
     }
-
-    // Initialize datepickers after DOM is ready
-    this.$nextTick(() => {
-      const vm = this;
-      
-      // Initialize start date picker
-      $("#start_date").datepicker({
-        format: 'mm/dd/yyyy',
-        startDate: new Date(),
-        autoclose: true,
-        todayHighlight: true
-      }).on('changeDate', function(e) {
-        vm.start_date = e.target.value;
-      });
-
-      // Initialize end date picker
-      $("#end_date").datepicker({
-        format: 'mm/dd/yyyy',
-        startDate: new Date(),
-        autoclose: true,
-        todayHighlight: true
-      }).on('changeDate', function(e) {
-        vm.end_date = e.target.value;
-      });
-
-      // Set initial values
-      const currentDate = new Date();
-      const futureDate = new Date(currentDate);
-      futureDate.setDate(currentDate.getDate() + 3);
-      
-      $("#start_date").datepicker("setDate", currentDate);
-      $("#end_date").datepicker("setDate", futureDate);
-    });
   },
 };
 </script>
@@ -447,27 +410,26 @@ export default {
   transform: translateX(4px);
 }
 
-.custom-form .datepicker-input {
+/* Date Input Styling */
+.custom-form input[type="date"] {
   cursor: pointer;
   position: relative;
 }
 
-.custom-form .datepicker-input::after {
-  content: '\f073';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
+.custom-form input[type="date"]::-webkit-calendar-picker-indicator {
   color: #ffd700;
-  pointer-events: none;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 8px;
 }
 
-.custom-form .datepicker-input:focus::after {
-  transform: translateY(-50%) scale(1.1);
+.custom-form input[type="date"]:focus::-webkit-calendar-picker-indicator {
   color: #f39c12;
+}
+
+.custom-form input[type="date"]:hover {
+  border-color: #ffd700;
 }
 
 .custom-form select.form-control {
