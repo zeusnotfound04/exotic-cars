@@ -61,7 +61,14 @@
 
           <div class="col-md-4">
             <label for="charter_date" class="form-label">Charter Date *</label>
-            <input type="text" class="form-control datepicker-input" id="charter_date" v-model="charter_date" readonly />
+            <input
+              type="date"
+              class="form-control"
+              id="charter_date"
+              v-model="charter_date"
+              :min="minDate"
+              placeholder="Select Charter Date"
+            />
           </div>
           
           <div class="col-md-4">
@@ -136,12 +143,12 @@
               @click="formSubmit"
               :disabled="isSubmitting"
             >
-              <span v-if="isSubmitting">
+              <template v-if="isSubmitting">
                 <i class="fas fa-spinner fa-spin me-2"></i>Submitting Charter Request...
-              </span>
-              <span v-else">
+              </template>
+              <template v-else>
                 <i class="fas fa-anchor me-2"></i>Request Yacht Charter
-              </span>
+              </template>
             </button>
           </div>
         </div>
@@ -203,6 +210,12 @@ export default {
     };
   },
 
+  computed: {
+    minDate() {
+      return new Date().toISOString().split('T')[0];
+    }
+  },
+
   methods: {
     async formSubmit() {
       if (this.isSubmitting) return;
@@ -223,8 +236,6 @@ export default {
       this.isSubmitting = true;
 
       try {
-        const charter_date_obj = $("#charter_date").datepicker("getDate");
-        
         // Prepare data for Google Sheets
         const sheetData = {
           type: "Yacht Charter Request",
@@ -232,7 +243,7 @@ export default {
           last_name: this.last_name,
           phone: this.phone,
           email: this.email,
-          charter_date: charter_date_obj ? charter_date_obj.toLocaleDateString() : "",
+          charter_date: this.charter_date,
           start_time: this.start_time,
           duration: this.duration,
           guests: this.guests,
@@ -249,7 +260,7 @@ export default {
         let whatsapp_message = "🛥️ YACHT CHARTER REQUEST\n\n";
         whatsapp_message += `Name: ${this.first_name} ${this.last_name}\n`;
         whatsapp_message += `Contact: ${this.phone} | ${this.email}\n`;
-        whatsapp_message += `Charter Date: ${charter_date_obj.toLocaleDateString()}\n`;
+        whatsapp_message += `Charter Date: ${this.charter_date}\n`;
         whatsapp_message += `Start Time: ${this.start_time}\n`;
         
         if (this.duration) whatsapp_message += `Duration: ${this.duration}\n`;
@@ -305,48 +316,24 @@ export default {
       this.last_name = "";
       this.phone = "";
       this.email = "";
+      this.charter_date = "";
       this.start_time = "";
       this.duration = "";
       this.guests = "";
       this.yacht_type = "";
       this.special_requests = "";
-      
-      // Reset datepicker to default date
-      const currentDate = new Date();
-      $("#charter_date").datepicker("update", currentDate);
-      this.charter_date = this.formatDateForDisplay(currentDate);
     },
 
     formatDateForDisplay(date) {
       return date.toLocaleDateString();
     },
+
+
   },
 
   created: function () {
-    // Initialize default date
-    const currentDate = new Date();
-    this.charter_date = this.formatDateForDisplay(currentDate);
-  },
-
-  mounted() {
-    // Initialize datepicker after DOM is ready
-    this.$nextTick(() => {
-      const vm = this;
-      
-      // Initialize charter date picker
-      $("#charter_date").datepicker({
-        format: 'mm/dd/yyyy',
-        startDate: new Date(),
-        autoclose: true,
-        todayHighlight: true
-      }).on('changeDate', function(e) {
-        vm.charter_date = e.target.value;
-      });
-
-      // Set initial value
-      const currentDate = new Date();
-      $("#charter_date").datepicker("setDate", currentDate);
-    });
+    // Initialize with empty date to let user select
+    this.charter_date = "";
   },
 };
 </script>
@@ -459,28 +446,64 @@ export default {
   transform: translateX(6px);
 }
 
-.yacht-form .datepicker-input {
+/* Date Input Styling */
+.yacht-form input[type="date"] {
   cursor: pointer;
   position: relative;
 }
 
-.yacht-form .datepicker-input::after {
-  content: '\f5a0';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
+.yacht-form input[type="date"]::-webkit-calendar-picker-indicator {
   color: #1a365d;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 8px;
 }
 
-.yacht-form .datepicker-input:focus::after {
-  transform: translateY(-50%) scale(1.2) rotate(10deg);
+.yacht-form input[type="date"]:focus::-webkit-calendar-picker-indicator {
   color: #ffd700;
+}
+
+/* Enhanced Date Input Styling */
+.yacht-form input[type="date"] {
+  position: relative;
+  background-color: #ffffff;
+  color: #1a365d;
+  font-weight: 500;
+}
+
+.yacht-form input[type="date"]:hover {
+  border-color: #1a365d;
+  box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+}
+
+.yacht-form input[type="date"]:focus {
+  border-color: #1a365d;
+  box-shadow: 0 0 0 6px rgba(26, 54, 93, 0.08);
+}
+
+/* Bootstrap datepicker dropdown styling */
+.datepicker {
+  z-index: 9999 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 40px rgba(26, 54, 93, 0.2) !important;
+  border: 2px solid #1a365d !important;
+}
+
+.datepicker .datepicker-days {
+  border-radius: 12px !important;
+}
+
+.datepicker table tr td.day:hover,
+.datepicker table tr td.focused {
+  background: #ffd700 !important;
+  color: #1a365d !important;
+}
+
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover {
+  background: #1a365d !important;
+  color: white !important;
 }
 
 .yacht-form select.form-control {
